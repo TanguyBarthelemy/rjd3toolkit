@@ -12,7 +12,7 @@ jobs:
     name: document
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.check_changes.outputs.test }}
+      has_changed: ${{ steps.check_changes.outputs.changed }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -54,17 +54,17 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --exit-code --quiet --name-only -- NAMESPACE man/ || echo "Changes detected" >> "$GITHUB_OUTPUT"
+          git diff --exit-code --quiet --name-only -- NAMESPACE man/ || echo "has_changed=Changes detected" >> $GITHUB_OUTPUT
           
       - name: Commit the changes
-        if: steps.check_changes.outputs.test == 'Changes detected'
+        if: ${{ steps.check_changes.outputs.changed == 'Changes detected' }}
         run: |
           git add man/\* NAMESPACE
           git commit -m '[GHA] Document package'
 
       # Commit changes or a placeholder commit if no changes
       - name: Commit no changes
-        if: steps.check_changes.outputs.test != 'Changes detected'
+        if: ${{ steps.check_changes.outputs.changed == 'Changes detected' }}
         run: |
           git commit --allow-empty -m '[GHA] Package already documented'
 
@@ -119,14 +119,14 @@ jobs:
           git diff --quiet \*.R || echo "has_changed=Changes detected" >> $GITHUB_OUTPUT
           
       - name: Commit the changes
-        if: steps.check_changes.outputs.changed == 'Changes detected'
+        if: ${{ steps.check_changes.outputs.changed == 'Changes detected' }}
         run: |
           git add \*.R
           git commit -m '[GHA] Style package'
 
       # Commit changes or a placeholder commit if no changes
       - name: Commit no changes
-        if: steps.check_changes.outputs.changed != 'Changes detected'
+        if: ${{ steps.check_changes.outputs.changed != 'Changes detected' }}
         run: |
           git commit --allow-empty -m '[GHA] Package already styled'
 
