@@ -1,11 +1,12 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/404.html</loc></url>
-<url><loc>https://rjdverse.github.io/rjd3toolkit/CODE_OF_CONDUCT.html</loc></url>
-<url><loc>https://rjdverse.github.io/rjd3toolkit/CONTRIBUTING.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/LICENSE-text.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/authors.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/index.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/news/index.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ABS.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/Exports.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/Imports.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/add_outlier.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/add_usrdefvar.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/aggregate.html</loc></url>
@@ -27,8 +28,6 @@
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/differences.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/differencing_fast.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/do_stationary.html</loc></url>
-<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/dot-likelihood.html</loc></url>
-<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/dot-tsmoniker.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/easter_dates.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/easter_day.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/easter_variable.html</loc></url>
@@ -42,6 +41,7 @@
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/invgaussiandistribution.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/jd3_print.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/jd3_utilities.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/likelihood.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ljungbox.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/long_term_mean.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/lp_variable.html</loc></url>
@@ -57,6 +57,7 @@
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ramp_variable.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/rangemean_tstat.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/reload_dictionaries.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/retail.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/runstests.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/sa_decomposition.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/sa_preprocessing.html</loc></url>
@@ -72,6 +73,7 @@
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_f.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_friedman.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_kruskalwallis.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_modified_qs.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_periodogram.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/seasonality_qs.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/set_arima.html</loc></url>
@@ -91,12 +93,14 @@
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/td.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/td_canovahansen.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/td_f.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/td_timevarying.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/to_ts.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/to_tscollection.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/trigonometric_variables.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ts_adjust.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ts_interpolate.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/tsdata_of.html</loc></url>
+<url><loc>https://rjdverse.github.io/rjd3toolkit/reference/tsmoniker.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ucarima_canonical.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ucarima_estimate.html</loc></url>
 <url><loc>https://rjdverse.github.io/rjd3toolkit/reference/ucarima_model.html</loc></url>
