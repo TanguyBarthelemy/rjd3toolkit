@@ -116,6 +116,10 @@ to the forecasting period.</p></dd>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p>The modified specification with new estimation span</p>
+    </div>
+    <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><code>x</code> specification parameter must be a JD3_X13_SPEC" class object
 generated with <code>rjd3x13::x13_spec()</code> (or "JD3_REGARIMA_SPEC" generated
@@ -131,8 +135,7 @@ with <code>rjd3x13::spec_regarima()</code> or "JD3_TRAMOSEATS_SPEC" generated wi
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">init_spec</span> <span class="op">&lt;-</span> <span class="va">x13_spec_default</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">init_spec</span> <span class="op">&lt;-</span> <span class="va">x13_spec_default</span></span></span>
 <span class="r-in"><span><span class="va">new_spec</span> <span class="op">&lt;-</span> <span class="fu">set_benchmarking</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    x <span class="op">=</span> <span class="va">init_spec</span>,</span></span>
 <span class="r-in"><span>    enabled <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
