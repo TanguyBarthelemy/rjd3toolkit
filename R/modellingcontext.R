@@ -367,40 +367,65 @@ modelling_context <- function(calendars = NULL, variables = NULL) {
     if (is.null(variables) || length(variables) == 0L) {
         variables <- list()
     } else if (is.list(variables)) {
-        list_var <- sapply(variables, is.list)
-        mts_var <- sapply(variables, is.mts)
-        ts_var <- (!list_var) & (!mts_var)
-        if (any(mts_var)) {
-            # case of a simple mts dictionary
-            for (i in which(mts_var)) {
-                all_var <- lapply(seq_len(ncol(variables[[i]])), function(j) {
-                    variables[[i]][, j]
-                })
-                names(all_var) <- colnames(variables[[i]])
-                variables[[i]] <- all_var
-                if (is.null(names(variables)[i]) || names(variables)[i] == "") {
+
+        variables_out <- list()
+        n <- names(variables)
+        for (id_elt in seq_along(variables)) {
+            elt <- variables[[id_elt]]
+
+            if (is.ts(elt)) {
+                group_name <- n[id_elt]
+                if (is.null(group_name) || group_name == "") {
                     # if the name is not set, use 'r' as the name of the dictionary
-                    names(variables)[i] <- "r"
+                    group_name <- "r"
                 }
+
+                var_list <- list(elt)
+                if (is.mts(elt)) {
+                    var_list <- lapply(seq_len(ncol(elt)), function(j) elt[, j])
+                    names(var_list) <- colnames(elt)
+                }
+
+                variables_out[[group_name]] <- append(variables_out[[group_name]], var_list)
+            } else {
+                warning("variables have wrong format. The variable", elt, "won't be taken.")
             }
         }
-        if (any(ts_var)) {
-            # case of a simple ts dictionary
-            # Use 'r' as the name of the dictionary
-            variables <- c(variables[!ts_var], list(r = variables[ts_var]))
-        }
-        if (sum(names(variables) == "r") >= 2) {
-            # handle case with multiple r groups defined
-            combined_var <- do.call(c, variables[names(variables) == "r"])
-            names(combined_var) <- unlist(lapply(variables[names(variables) == "r"], names))
-            combined_var <- list(r = combined_var)
-            variables <- c(variables[names(variables) != "r"], combined_var)
-        }
+
+        # list_var <- sapply(variables, is.list)
+        # mts_var <- sapply(variables, is.mts)
+        # ts_var <- (!list_var) & (!mts_var)
+        # if (any(mts_var)) {
+        #     # case of a simple mts dictionary
+        #     for (i in which(mts_var)) {
+        #         all_var <- lapply(seq_len(ncol(variables[[i]])), function(j) {
+        #             variables[[i]][, j]
+        #         })
+        #         names(all_var) <- colnames(variables[[i]])
+        #         variables[[i]] <- all_var
+        #         if (is.null(names(variables)[i]) || names(variables)[i] == "") {
+        #             # if the name is not set, use 'r' as the name of the dictionary
+        #             names(variables)[i] <- "r"
+        #         }
+        #     }
+        # }
+        # if (any(ts_var)) {
+        #     # case of a simple ts dictionary
+        #     # Use 'r' as the name of the dictionary
+        #     variables <- c(variables[!ts_var], list(r = variables[ts_var]))
+        # }
+        # if (sum(names(variables) == "r") >= 2) {
+        #     # handle case with multiple r groups defined
+        #     combined_var <- do.call(c, variables[names(variables) == "r"])
+        #     names(combined_var) <- unlist(lapply(variables[names(variables) == "r"], names))
+        #     combined_var <- list(r = combined_var)
+        #     variables <- c(variables[names(variables) != "r"], combined_var)
+        # }
     } else {
         stop("variables should be a list of vars")
     }
 
-    return(list(calendars = calendars, variables = variables))
+    return(list(calendars = calendars, variables = variables_out))
 }
 
 
