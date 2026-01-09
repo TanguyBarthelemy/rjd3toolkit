@@ -126,7 +126,7 @@ remove_outlier <- function(x,
 }
 
 #' @export
-remove_outlier.default <- function(x,
+remove_outlier.JD3_REGARIMA_SPEC <- function(x,
                                    type = NULL,
                                    date = NULL,
                                    name = NULL) {
@@ -162,6 +162,14 @@ remove_outlier.default <- function(x,
         x$regression["outliers"] <- list(NULL)
     }
     return(x)
+}
+
+#' @export
+remove_outlier.default <- function(x,
+                                   type = NULL,
+                                   date = NULL,
+                                   name = NULL) {
+    stop("x have not the right class.")
 }
 
 #' @rdname add_outlier

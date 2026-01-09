@@ -8,6 +8,11 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+* Only JD3_REGARIMA_SPEC objects (and extended method via rjd3x13 and rjd3tramoseats) are accepted for remove_outliers function.
+
+
 ## [3.6.0] - 2025-11-21
 
 ### Changed
