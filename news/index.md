@@ -1,6 +1,6 @@
 # Changelog
 
-## rjd3toolkit 3.6.0.9000
+## rjd3toolkit 3.6.0
 
 All notable changes to this project will be documented in this file.
 
@@ -26,8 +26,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 #### Added
 
-- [`get_java_version()`](https://rjdverse.github.io/rjd3toolkit/reference/jd3_utilities.md)
-  function to compute the Java installed version
+- `get_java_version()` function to compute the Java installed version
 - `current_java_version` character string with the current installed
   Java version
 - `minimal_java_version` character string with the minimum viable Java
