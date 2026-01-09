@@ -76,6 +76,7 @@ init_spec <- x13_spec_default
 new_spec <- add_outlier(init_spec, type = "AO", date = "2012-01-01")
 # Removing outlier on year 2012
 new_spec <- remove_outlier(new_spec, type = "AO", date = "2012-01-01")
+#> Error in remove_outlier.default(new_spec, type = "AO", date = "2012-01-01"): x have not the right class.
 
 # Adding ramp on year 2012
 new_spec2 <- add_ramp(init_spec, start = "2012-01-01", end = "2012-12-01")
