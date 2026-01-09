@@ -45,11 +45,11 @@ for details).
 x <- random_t(5, 1000)
 # random values
 testofruns(x)
-#> Value: 0.6513717 
-#> P-Value: 0.5148 
+#> Value: -0.5663879 
+#> P-Value: 0.5711 
 testofupdownruns(x)
-#> Value: 1.776611 
-#> P-Value: 0.0756 
+#> Value: -0.2502269 
+#> P-Value: 0.8024 
 # non-random values
 testofruns(ABS$X0.2.09.10.M)
 #> Value: -14.05884 
