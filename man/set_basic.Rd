@@ -89,7 +89,7 @@ new_spec <- set_basic(
 )
 
 # Estimation excluding 60 observations at the beginning and 36 at the end of the series
-new_spec <-set_basic(
+new_spec <- set_basic(
     init_spec,
     type = "Excluding",
     n0 = 60,

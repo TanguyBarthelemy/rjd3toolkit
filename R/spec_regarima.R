@@ -29,17 +29,17 @@
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #'
-#' init_spec <- x13_spec_default
+#' init_spec_regarima <- x13_spec_default$regarima
 #'
 #' # Adding outlier on year 2012
-#' new_spec <- add_outlier(init_spec, type = "AO", date = "2012-01-01")
+#' new_spec_regarima <- add_outlier(init_spec_regarima, type = "AO", date = "2012-01-01")
 #' # Removing outlier on year 2012
-#' new_spec <- remove_outlier(new_spec, type = "AO", date = "2012-01-01")
+#' new_spec_regarima <- remove_outlier(new_spec_regarima, type = "AO", date = "2012-01-01")
 #'
 #' # Adding ramp on year 2012
-#' new_spec2 <- add_ramp(init_spec, start = "2012-01-01", end = "2012-12-01")
+#' new_spec_regarima2 <- add_ramp(init_spec_regarima, start = "2012-01-01", end = "2012-12-01")
 #' # Removing ramp on year 2012
-#' new_spec2 <- remove_ramp(new_spec2, start = "2012-01-01", end = "2012-12-01")
+#' new_spec_regarima2 <- remove_ramp(new_spec_regarima2, start = "2012-01-01", end = "2012-12-01")
 #'
 #' @seealso \code{\link{add_usrdefvar}}, \code{\link{intervention_variable}}
 #' @references
@@ -54,12 +54,11 @@ add_outlier <- function(x,
     UseMethod("add_outlier", x)
 }
 
-#' @export
-add_outlier.default <- function(x,
-                                type,
-                                date,
-                                name = sprintf("%s (%s)", type, date),
-                                coef = 0) {
+add_outlier_regarima <- function(x,
+                                 type,
+                                 date,
+                                 name = sprintf("%s (%s)", type, date),
+                                 coef = 0) {
     type <- match.arg(
         toupper(type),
         choices = c("AO", "TC", "LS", "SO"),
@@ -90,6 +89,33 @@ add_outlier.default <- function(x,
     return(x)
 }
 
+#' @export
+add_outlier.JD3_REGARIMA_SPEC <- function(x,
+                                          type,
+                                          date,
+                                          name = sprintf("%s (%s)", type, date),
+                                          coef = 0) {
+    return(add_outlier_regarima(x, type, date, name, coef))
+}
+
+#' @export
+add_outlier.JD3_TRAMO_SPEC <- function(x,
+                                          type,
+                                          date,
+                                          name = sprintf("%s (%s)", type, date),
+                                          coef = 0) {
+    return(add_outlier_regarima(x, type, date, name, coef))
+}
+
+#' @export
+add_outlier.default <- function(x,
+                                type = NULL,
+                                date = NULL,
+                                name = NULL,
+                                coef = NULL) {
+    stop("x have not the right class.")
+}
+
 .create_outlier <- function(code, pos, name = NULL, coef = NULL) {
     res <- list(name = name, pos = pos, code = code, coef = .fixed_parameter(coef))
     return(res)
@@ -115,7 +141,6 @@ add_outlier.default <- function(x,
 }
 
 
-
 #' @rdname add_outlier
 #' @export
 remove_outlier <- function(x,
@@ -125,11 +150,10 @@ remove_outlier <- function(x,
     UseMethod("remove_outlier", x)
 }
 
-#' @export
-remove_outlier.JD3_REGARIMA_SPEC <- function(x,
-                                   type = NULL,
-                                   date = NULL,
-                                   name = NULL) {
+remove_outlier_regarima <- function(x,
+                                             type = NULL,
+                                             date = NULL,
+                                             name = NULL) {
     if (is.null(x$regression$outliers)) {
         return(x)
     }
@@ -165,6 +189,22 @@ remove_outlier.JD3_REGARIMA_SPEC <- function(x,
 }
 
 #' @export
+remove_outlier.JD3_REGARIMA_SPEC <- function(x,
+                                             type = NULL,
+                                             date = NULL,
+                                             name = NULL) {
+    return(remove_outlier_regarima(x, type, date, name))
+}
+
+#' @export
+remove_outlier.JD3_TRAMO_SPEC <- function(x,
+                                          type = NULL,
+                                          date = NULL,
+                                          name = NULL) {
+    return(remove_outlier_regarima(x, type, date, name))
+}
+
+#' @export
 remove_outlier.default <- function(x,
                                    type = NULL,
                                    date = NULL,
@@ -182,12 +222,11 @@ add_ramp <- function(x,
     UseMethod("add_ramp", x)
 }
 
-#' @export
-add_ramp.default <- function(x,
-                             start,
-                             end,
-                             name = sprintf("rp.%s - %s", start, end),
-                             coef = 0) {
+add_ramp_regarima <- function(x,
+                                       start,
+                                       end,
+                                       name = sprintf("rp.%s - %s", start, end),
+                                       coef = 0) {
     # data.frame to recycle arguments
     new_ramp <- data.frame(start, end, name, coef)
     new_ramp <- as.list(new_ramp)
@@ -213,6 +252,33 @@ add_ramp.default <- function(x,
     return(x)
 }
 
+#' @export
+add_ramp.JD3_REGARIMA_SPEC <- function(x,
+                                       start,
+                                       end,
+                                       name = sprintf("rp.%s - %s", start, end),
+                                       coef = 0) {
+    return(add_ramp_regarima(x, start, end, name, coef))
+}
+
+#' @export
+add_ramp.JD3_TRAMO_SPEC <- function(x,
+                                       start,
+                                       end,
+                                       name = sprintf("rp.%s - %s", start, end),
+                                       coef = 0) {
+    return(add_ramp_regarima(x, start, end, name, coef))
+}
+
+#' @export
+add_ramp.default <- function(x,
+                             start,
+                             end,
+                             name = sprintf("rp.%s - %s", start, end),
+                             coef = 0) {
+    stop("x have not the right class.")
+}
+
 .create_ramp <- function(start, end, name = NULL, coef = NULL) {
     res <- list(name = name, start = start, end = end, coef = .fixed_parameter(coef))
     return(res)
@@ -227,8 +293,7 @@ remove_ramp <- function(x,
     UseMethod("remove_ramp", x)
 }
 
-#' @export
-remove_ramp.default <- function(x,
+remove_ramp_regarima <- function(x,
                                 start = NULL,
                                 end = NULL,
                                 name = NULL) {
@@ -258,6 +323,30 @@ remove_ramp.default <- function(x,
         x$regression["ramps"] <- list(NULL)
     }
     return(x)
+}
+
+#' @export
+remove_ramp.JD3_REGARIMA_SPEC <- function(x,
+                                          start = NULL,
+                                          end = NULL,
+                                          name = NULL) {
+    return(remove_ramp_regarima(x, start, end, name))
+}
+
+#' @export
+remove_ramp.JD3_TRAMO_SPEC <- function(x,
+                                       start = NULL,
+                                       end = NULL,
+                                       name = NULL) {
+    return(remove_ramp_regarima(x, start, end, name))
+}
+
+#' @export
+remove_ramp.default <- function(x,
+                                start = NULL,
+                                end = NULL,
+                                name = NULL) {
+    stop("x have not the right class.")
 }
 
 #' @title Set estimation sub-span and quality check specification
@@ -332,7 +421,7 @@ remove_ramp.default <- function(x,
 #' )
 #'
 #' # Estimation excluding 60 observations at the beginning and 36 at the end of the series
-#' new_spec <-set_basic(
+#' new_spec <- set_basic(
 #'     init_spec,
 #'     type = "Excluding",
 #'     n0 = 60,
@@ -356,8 +445,8 @@ set_basic <- function(x,
                       preprocessing = NA) {
     UseMethod("set_basic", x)
 }
-#' @export
-set_basic.default <- function(x,
+
+set_basic_regarima <- function(x,
                               type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
                               d0 = NULL,
                               d1 = NULL,
@@ -382,6 +471,42 @@ set_basic.default <- function(x,
     }
     x$basic <- basic
     return(x)
+}
+
+#' @export
+set_basic.JD3_REGARIMA_SPEC <- function(x,
+                                        type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
+                                        d0 = NULL,
+                                        d1 = NULL,
+                                        n0 = 0,
+                                        n1 = 0,
+                                        preliminary.check = NA,
+                                        preprocessing = NA) {
+    return(set_basic_regarima(x, type, d0, d1, n0, n1, preliminary.check, preprocessing))
+}
+
+#' @export
+set_basic.JD3_TRAMO_SPEC <- function(x,
+                                     type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
+                                     d0 = NULL,
+                                     d1 = NULL,
+                                     n0 = 0,
+                                     n1 = 0,
+                                     preliminary.check = NA,
+                                     preprocessing = NA) {
+    return(set_basic_regarima(x, type, d0, d1, n0, n1, preliminary.check, preprocessing))
+}
+
+#' @export
+set_basic.default <- function(x,
+                              type = c(NA, "All", "From", "To", "Between", "Last", "First", "Excluding"),
+                              d0 = NULL,
+                              d1 = NULL,
+                              n0 = 0,
+                              n1 = 0,
+                              preliminary.check = NA,
+                              preprocessing = NA) {
+    stop("x have not the right class.")
 }
 
 #' @title Set Numeric Estimation Parameters and Modelling Span
@@ -448,6 +573,7 @@ set_estimate <- function(x,
                          unit.root.limit = NA) {
     UseMethod("set_estimate", x)
 }
+
 #' @export
 set_estimate.default <- function(x,
                                  type = c("All", "From", "To", "Between", "Last", "First", "Excluding"),
@@ -1679,6 +1805,7 @@ set_transform <- function(x,
                           fct = NA) {
     UseMethod("set_transform", x)
 }
+
 #' @export
 set_transform.default <- function(x,
                                   fun = c(NA, "Auto", "Log", "None"),
