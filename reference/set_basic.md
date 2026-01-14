@@ -88,6 +88,7 @@ new_spec <- set_basic(
     preliminary.check = TRUE,
     preprocessing = TRUE
 )
+#> Error in set_basic.default(init_spec, type = "Between", d0 = "2014-01-01",     d1 = "2019-01-01", preliminary.check = TRUE, preprocessing = TRUE): x have not the right class.
 
 # Estimation on the first 60 observations
 new_spec <- set_basic(
@@ -97,6 +98,7 @@ new_spec <- set_basic(
     preliminary.check = TRUE,
     preprocessing = TRUE
 )
+#> Error in set_basic.default(init_spec, type = "First", n0 = 60, preliminary.check = TRUE,     preprocessing = TRUE): x have not the right class.
 
 # Estimation on the last 60 observations
 new_spec <- set_basic(
@@ -106,9 +108,10 @@ new_spec <- set_basic(
     preliminary.check = TRUE,
     preprocessing = TRUE
 )
+#> Error in set_basic.default(init_spec, type = "Last", n1 = 60, preliminary.check = TRUE,     preprocessing = TRUE): x have not the right class.
 
 # Estimation excluding 60 observations at the beginning and 36 at the end of the series
-new_spec <-set_basic(
+new_spec <- set_basic(
     init_spec,
     type = "Excluding",
     n0 = 60,
@@ -116,4 +119,5 @@ new_spec <-set_basic(
     preliminary.check = TRUE,
     preprocessing = TRUE
 )
+#> Error in set_basic.default(init_spec, type = "Excluding", n0 = 60, n1 = 36,     preliminary.check = TRUE, preprocessing = TRUE): x have not the right class.
 ```
