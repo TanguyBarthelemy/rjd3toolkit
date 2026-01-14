@@ -10,11 +10,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### [Unreleased](https://github.com/rjdverse/rjd3toolkit/compare/v3.6.0...HEAD)
 
-#### Changed
-
-- Only JD3_REGARIMA_SPEC objects (and extended method via rjd3x13 and
-  rjd3tramoseats) are accepted for remove_outliers function.
-
 ### [3.6.0](https://github.com/rjdverse/rjd3toolkit/compare/v3.5.1...v3.6.0) - 2025-11-21
 
 #### Changed
