@@ -54,35 +54,35 @@ for details).
 ``` r
 x <- rnorm(100) # null
 bowmanshenton(x)
-#> Value: 3.511406 
-#> P-Value: 0.1728 
+#> Value: 3.69057 
+#> P-Value: 0.1580 
 doornikhansen(x)
-#> Value: 3.544144 
-#> P-Value: 0.1700 
+#> Value: 3.853265 
+#> P-Value: 0.1456 
 jarquebera(x)
-#> Value: 3.754974 
-#> P-Value: 0.1530 
+#> Value: 3.914557 
+#> P-Value: 0.1412 
 skewness(x)
-#> Value: 0.4484815 
-#> P-Value: 0.0671 
+#> Value: 0.4639459 
+#> P-Value: 0.0582 
 kurtosis(x)
-#> Value: 3.195435 
-#> P-Value: 0.6899 
+#> Value: 3.157333 
+#> P-Value: 0.7481 
 
 x <- random_t(2, 100) # alternative
 bowmanshenton(x)
-#> Value: 12.72727 
-#> P-Value: 0.0017 
+#> Value: 6.538806 
+#> P-Value: 0.0380 
 doornikhansen(x)
-#> Value: 9.896099 
-#> P-Value: 0.0071 
+#> Value: 8.599286 
+#> P-Value: 0.0136 
 jarquebera(x)
-#> Value: 14.68598 
-#> P-Value: 0.0006 
+#> Value: 7.892741 
+#> P-Value: 0.0193 
 skewness(x)
-#> Value: 0.437176 
-#> P-Value: 0.0743 
+#> Value: -0.1436786 
+#> P-Value: 0.5575 
 kurtosis(x)
-#> Value: 4.513292 
-#> P-Value: 0.0020 
+#> Value: 4.219319 
+#> P-Value: 0.0128 
 ```
