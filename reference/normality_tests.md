@@ -71,18 +71,18 @@ kurtosis(x)
 
 x <- random_t(2, 100) # alternative
 bowmanshenton(x)
-#> Value: 339.4505 
-#> P-Value: 0.0000 
+#> Value: 12.72727 
+#> P-Value: 0.0017 
 doornikhansen(x)
-#> Value: 42.68451 
-#> P-Value: 0.0000 
+#> Value: 9.896099 
+#> P-Value: 0.0071 
 jarquebera(x)
-#> Value: 377.3464 
-#> P-Value: 0.0000 
+#> Value: 14.68598 
+#> P-Value: 0.0006 
 skewness(x)
-#> Value: 1.516831 
-#> P-Value: 0.0000 
+#> Value: 0.437176 
+#> P-Value: 0.0743 
 kurtosis(x)
-#> Value: 11.50088 
-#> P-Value: 0.0000 
+#> Value: 4.513292 
+#> P-Value: 0.0020 
 ```

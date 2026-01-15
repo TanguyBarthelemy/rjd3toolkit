@@ -1,4 +1,4 @@
-# The Chi-Squared Distribution
+# Chi-Squared Distribution
 
 Density, (cumulative) distribution function and random generation for
 chi-squared distribution.
@@ -27,6 +27,10 @@ random_chi2(df, n)
 
   number of observations.
 
+## Value
+
+numeric vector
+
 ## Examples
 
 ``` r
@@ -37,6 +41,6 @@ cdf_chi2(df = 3, 1:10)
 #>  [1] 0.1987480 0.4275933 0.6083748 0.7385359 0.8282029 0.8883898 0.9281022
 #>  [8] 0.9539883 0.9707091 0.9814339
 random_chi2(df = 3, n = 10)
-#>  [1] 0.2946120 2.7412643 4.2627169 1.2970750 3.2402436 0.6069448 2.2800656
-#>  [8] 2.6431082 5.2432586 1.2865729
+#>  [1] 1.9531343 4.5294511 0.2426159 1.8355875 0.3209240 1.1599241 3.9709799
+#>  [8] 1.0551920 0.9629171 0.4917415
 ```

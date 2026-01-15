@@ -1,4 +1,4 @@
-# The Gamma Distribution
+# Gamma Distribution
 
 Density, (cumulative) distribution function and random generation for
 Gamma distribution.
@@ -27,6 +27,10 @@ random_gamma(shape, scale, n)
 
   number of observations.
 
+## Value
+
+numeric vector
+
 ## Examples
 
 ``` r
@@ -37,6 +41,6 @@ cdf_gamma(shape = 1, scale = 2, x = 1:10)
 #>  [1] 0.3934693 0.6321206 0.7768698 0.8646647 0.9179150 0.9502129 0.9698026
 #>  [8] 0.9816844 0.9888910 0.9932621
 random_gamma(shape = 1, scale = 2, n = 10)
-#>  [1] 1.0754856 2.2656046 0.3011733 1.1276938 3.3999130 0.5253297 0.8105875
-#>  [8] 1.8820440 1.7289594 2.5817331
+#>  [1]  0.750827774  1.798134504  0.210514005  0.796012222  0.062860556
+#>  [6]  0.009864258  1.444209509  2.096578503 14.371999513  5.297237026
 ```
