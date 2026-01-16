@@ -25,7 +25,8 @@ The functions density_XXX and cdf_t return numeric vectors of same length as \co
 The functions random_XXX return random number (numeric vectors) of length \code{n}.
 }
 \description{
-Probability Density Function (PDF), Cumulative Density Function (CDF) and generation of random variables following a Student distribution.
+Probability Density Function (PDF), Cumulative Density Function (CDF) and
+generation of random variables following a Student distribution.
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}

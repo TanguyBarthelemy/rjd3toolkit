@@ -21,13 +21,12 @@ random_chi2(df, n)
 \item{n}{number of observations.}
 }
 \value{
-numeric vector
-
 The functions density_XXX and cdf_t return numeric vectors of same length as \code{x}.
 The functions random_XXX return random number (numeric vectors) of length \code{n}.
 }
 \description{
-Density, (cumulative) distribution function and random generation for chi-squared distribution.
+Density, (cumulative) distribution function and random generation for
+chi-squared distribution.
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}

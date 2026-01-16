@@ -351,9 +351,17 @@ get_date_max()
 
 \item{length}{Length}
 
-\item{p, r, spec, jucm, start, end, name, period, type, code, prefix, span, rspan, full, rslt, jd, jcontext, jobjRef, jcals, subclasses, result, pcalendar}{parameters.}
+\item{p, r}{parameters.}
+
+\item{rspan, rslt, subclasses, result}{parameters.}
+
+\item{spec, start, end, name, period, type, code, prefix, span, full, subclasses}{parameters.}
 
 \item{model}{Model}
+
+\item{jucm, jd, jcontext, jobjRef, jcals}{parameters.}
+
+\item{pcalendar}{parameters.}
 
 \item{jobj}{Java object}
 
@@ -366,6 +374,7 @@ get_date_max()
 \item{id}{Identifier of the time series information (source-dependent)}
 }
 \description{
-These functions are used in all JDemetra+ 3.0 packages to easily interact between R and Java objects.
+These functions are used in all JDemetra+ 3.0 packages to easily interact
+between R and Java objects.
 }
 \keyword{datasets}

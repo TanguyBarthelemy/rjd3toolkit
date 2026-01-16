@@ -6,7 +6,8 @@ NULL
 #' @title Java Utility Functions
 #'
 #' @description
-#' These functions are used in all JDemetra+ 3.0 packages to easily interact between R and Java objects.
+#' These functions are used in all JDemetra+ 3.0 packages to easily interact
+#' between R and Java objects.
 #'
 #' @param p,r parameters.
 #' @param jucm,jd,jcontext,jobjRef,jcals parameters.
@@ -264,7 +265,9 @@ NULL
     dt0 <- .p2r_date(span$d0)
     dt1 <- .p2r_date(span$d1)
 
-    return(structure(list(type = type, d0 = dt0, d1 = dt1, n0 = span$n0, n1 = span$n1), class = "JD3_SPAN"))
+    output <- list(type = type, d0 = dt0, d1 = dt1, n0 = span$n0, n1 = span$n1)
+    class(output) <- "JD3_SPAN"
+    return(output)
 }
 
 #' @export
@@ -425,7 +428,10 @@ NULL
     p$name <- r$name
     p$sequences <- .r2p_sequences(r$sequences)
     p$coefficient <- .r2p_parameter(r$coef)
-    p$metadata <- modelling.InterventionVariable.MetadataEntry$new(key = "regeffect", value = r$regeffect)
+    p$metadata <- modelling.InterventionVariable.MetadataEntry$new(
+        key = "regeffect",
+        value = r$regeffect
+    )
     return(p)
 }
 
@@ -513,7 +519,10 @@ NULL
     p$id <- r$id
     p$lag <- r$lag
     p$coefficient <- .r2p_parameter(r$coef)
-    p$metadata <- modelling.TsVariable.MetadataEntry$new(key = "regeffect", value = r$regeffect)
+    p$metadata <- modelling.TsVariable.MetadataEntry$new(
+        key = "regeffect",
+        value = r$regeffect
+    )
     return(p)
 }
 
@@ -559,14 +568,26 @@ NULL
     nb <- p$nbcasts
     nf <- p$nfcasts
 
-    val <- ts(s[(nb + 1):(n - nf)], frequency = freq, start = .ts_move(start, freq, nb))
+    val <- ts(
+        data = s[(nb + 1):(n - nf)],
+        frequency = freq,
+        start = .ts_move(start, freq, nb)
+    )
     rslt <- list(data = val)
     if (nb > 0) {
-        bcasts <- ts(s[1:nb], frequency = freq, start = start)
+        bcasts <- ts(
+            data = s[1:nb],
+            frequency = freq,
+            start = start
+        )
         rslt[["bcasts"]] <- bcasts
     }
     if (nf > 0) {
-        fcasts <- ts(s[(n - nf + 1):n], frequency = freq, start = .ts_move(start, freq, n - nf))
+        fcasts <- ts(
+            data = s[(n - nf + 1):n],
+            frequency = freq,
+            start = .ts_move(start, freq, n - nf)
+        )
         rslt[["fcasts"]] <- fcasts
     }
     return(rslt)
