@@ -151,7 +151,15 @@ fixed_day <- function(month, day, weight = 1, validity = NULL) {
 #' \url{https://jdemetra-new-documentation.netlify.app/a-calendar-correction}
 #'
 fixed_week_day <- function(month, week, dayofweek, weight = 1, validity = NULL) {
-    return(structure(list(month = month, week = week, dayofweek = dayofweek, weight = weight, validity = validity), class = c(FIXEDWEEKDAY, HOLIDAY)))
+    output <- list(
+        month = month,
+        week = week,
+        dayofweek = dayofweek,
+        weight = weight,
+        validity = validity
+    )
+    class(output) <- c(FIXEDWEEKDAY, HOLIDAY)
+    return(output)
 }
 
 .p2r_fixedweekday <- function(p) {

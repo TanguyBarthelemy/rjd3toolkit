@@ -8,7 +8,11 @@ NULL
 #' @description
 #' These functions are used in all JDemetra+ 3.0 packages to easily interact between R and Java objects.
 #'
-#' @param p,r,spec,jucm,start,end,name,period,type,code,prefix,span,rspan,full,rslt,jd,jcontext,jobjRef,jcals,subclasses,result,pcalendar parameters.
+#' @param p,r parameters.
+#' @param jucm,jd,jcontext,jobjRef,jcals parameters.
+#' @param pcalendar parameters.
+#' @param spec,start,end,name,period,type,code,prefix,span,full,subclasses parameters.
+#' @param rspan,rslt,subclasses,result parameters.
 #' @param s Time series
 #' @param js Java time series
 #' @param model Model

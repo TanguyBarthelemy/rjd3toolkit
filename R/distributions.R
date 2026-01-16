@@ -1,7 +1,8 @@
 #' @title Student Distribution
 #'
 #' @description
-#' Probability Density Function (PDF), Cumulative Density Function (CDF) and generation of random variables following a Student distribution.
+#' Probability Density Function (PDF), Cumulative Density Function (CDF) and
+#' generation of random variables following a Student distribution.
 #'
 #' @param df degrees of freedom.
 #' @param n number of observations.
@@ -47,8 +48,8 @@ cdf_t <- function(df, x) {
 #' @title Chi-Squared Distribution
 #'
 #' @description
-#' Density, (cumulative) distribution function and random generation for chi-squared distribution.
-#' @return numeric vector
+#' Density, (cumulative) distribution function and random generation for
+#' chi-squared distribution.
 #'
 #' @inheritParams studentdistribution
 #'
@@ -91,7 +92,6 @@ cdf_chi2 <- function(df, x) {
 #'
 #' @inheritParams studentdistribution
 #' @param shape,scale shape and scale parameters.
-#' @return numeric vector
 #'
 #' @returns
 #' The functions density_XXX and cdf_t return numeric vectors of same length as \code{x}.
@@ -108,28 +108,43 @@ cdf_chi2 <- function(df, x) {
 #' @order 3
 #' @export
 random_gamma <- function(shape, scale, n) {
-    .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsGamma", shape, scale, as.integer(n))
+    .jcall(
+        obj = "jdplus/toolkit/base/r/stats/Distributions",
+        returnSig = "[D",
+        method = "randomsGamma",
+        shape, scale, as.integer(n)
+    )
 }
 
 #' @rdname gammadistribution
 #' @order 1
 #' @export
 density_gamma <- function(shape, scale, x) {
-    .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityGamma", shape, scale, .jarray(as.numeric(x)))
+    .jcall(
+        obj = "jdplus/toolkit/base/r/stats/Distributions",
+        returnSig = "[D",
+        method = "densityGamma",
+        shape, scale, .jarray(as.numeric(x))
+    )
 }
 
 #' @rdname gammadistribution
 #' @order 2
 #' @export
 cdf_gamma <- function(shape, scale, x) {
-    .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "cdfGamma", shape, scale, .jarray(as.numeric(x)))
+    .jcall(
+        obj = "jdplus/toolkit/base/r/stats/Distributions",
+        returnSig = "[D",
+        method = "cdfGamma",
+        shape, scale, .jarray(as.numeric(x))
+    )
 }
 
 #' @title Inverse-Gamma Distribution
 #'
 #' @description
-#' Density, (cumulative) distribution function and random generation for inverse-gamma distribution.
-#' @return numeric vector
+#' Density, (cumulative) distribution function and random generation for
+#' inverse-gamma distribution.
 #'
 #' @inheritParams gammadistribution
 #'
@@ -168,7 +183,6 @@ cdf_inverse_gamma <- function(shape, scale, x) {
 #'
 #' @description
 #' Density, (cumulative) distribution function and random generation for inverse-gaussian distribution.
-#' @return numeric vector
 #'
 #' @inheritParams gammadistribution
 #'
