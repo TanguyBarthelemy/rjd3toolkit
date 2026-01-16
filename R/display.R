@@ -416,8 +416,7 @@ print.JD3_SARIMA_ESTIMATE <- function(x, digits = max(3L, getOption("digits") - 
         stde <- sqrt(diag(x$bvar))
         t <- estimate / stde
         pval <- 2 * pt(abs(t), ndf, lower.tail = FALSE)
-        coef_table <- data.frame(estimate, "ESTIMATED", stde, t, pval,
-                            stringsAsFactors = FALSE)
+        coef_table <- data.frame(estimate, "ESTIMATED", stde, t, pval, stringsAsFactors = FALSE)
         colnames(coef_table) <- c(
             "Estimate", "Type", "Std. Error",
             "T-stat", "Pr(>|t|)"

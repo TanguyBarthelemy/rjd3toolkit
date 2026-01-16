@@ -1629,25 +1629,42 @@ set_easter.default <- function(x, enabled = NA,
 #' @title Set Log-level Transformation and Decomposition scheme in Pre-Processing Specification
 #'
 #' @inheritParams set_basic
-#' @param fun the transformation of the input series: \code{"None"} = no transformation of the series;
-#' \code{"Log"} = takes the log of the series; \code{"Auto"} = the program tests for the log-level specification.
-#' @param adjust pre-adjustment of the input series for the length of period or leap year effects:
-#' \code{"None"} = no adjustment; \code{"LeapYear"} = leap year effect; \code{"LengthOfPeriod"} = length of period.
-#' Modifications of this variable are taken into account only when \code{function = "Log"}.
-#' @param outliers Boolean indicating if a pre-correction for large outliers (AO and LS only) should be done
-#' in the test for the log-level specification (`fun = "Auto"`). By default to `FALSE`.
-#' @param aicdiff (REGARIMA/X-13 specific)  a numeric defining the difference in AICC needed to accept no transformation when the automatic
-#' transformation selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.
-#' @param fct (TRAMO specific) \code{numeric} controlling the bias in the log/level pre-test:
-#' \code{transform.fct}> 1 favours levels, \code{transform.fct}< 1 favours logs.
+#' @param fun the transformation of the input series:
+#' \enumerate{
+#' \item \code{"None"} = no transformation of the series;
+#' \item \code{"Log"} = takes the log of the series;
+#' \item \code{"Auto"} = the program tests for the log-level specification.
+#' }
+#' @param adjust pre-adjustment of the input series for the length of period or
+#' leap year effects:
+#' \enumerate{
+#' \item \code{"None"} = no adjustment;
+#' \item \code{"LeapYear"} = leap year effect;
+#' \item \code{"LengthOfPeriod"} = length of period.
+#' }
+#' Modifications of this variable are taken into account only when
+#' \code{function = "Log"}.
+#' @param outliers Boolean indicating if a pre-correction for large outliers
+#' (AO and LS only) should be done in the test for the log-level specification
+#' (`fun = "Auto"`). By default to `FALSE`.
+#' @param aicdiff (REGARIMA/X-13 specific)  a numeric defining the difference
+#' in AICC needed to accept no transformation when the automatic transformation
+#' selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.
+#' @param fct (TRAMO specific) \code{numeric} controlling the bias in the
+#' log/level pre-test:
+#' \enumerate{
+#' \item \code{transform.fct} > 1 favours levels;
+#' \item \code{transform.fct}< 1 favours logs.
+#' }
 #' Considered only when \code{fun = "Auto"}.
 #'
 #' @returns The modified specification (with log/level transformation scheme)
 #'
 #' @details
-#' \code{x} specification parameter must be a JD3_X13_SPEC" class object generated with \code{rjd3x13::x13_spec()}
-#' (or "JD3_REGARIMA_SPEC" generated with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC"
-#' generated with \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
+#' \code{x} specification parameter must be a JD3_X13_SPEC" class object
+#' generated with \code{rjd3x13::x13_spec()} (or "JD3_REGARIMA_SPEC" generated
+#' with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC" generated with
+#' \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
 #' \code{rjd3tramoseats::spec_tramo()}).
 #'
 #' @seealso \code{\link{set_outlier}}, \code{\link{set_tradingdays}}
@@ -1722,38 +1739,50 @@ set_transform.default <- function(x,
 #'
 #' @description
 #' Function allowing to add any user-defined regressor to a specification and
-#' allocate its effect to a selected component, excepted to the calendar component.
-#' To add user-defined calendar regressors, \code{\link{set_tradingdays}}. Once added to
-#' a specification, the external regressor(s) will also have to be added to a modelling context
-#' before being used in an estimation process. see \code{\link{modelling_context}} and example.
+#' allocate its effect to a selected component, excepted to the calendar
+#' component.
+#' To add user-defined calendar regressors, \code{\link{set_tradingdays}}.
+#' Once added to a specification, the external regressor(s) will also have to
+#' be added to a modelling context before being used in an estimation process.
+#' See \code{\link{modelling_context}} and example.
 #'
 #' @inheritParams set_basic
-#' @param group,name the name of the regressor in the format `"group.name"`, by default `"r.name"` by default if `group` NULL
-#' `"group.name"` has to be the same as in \code{\link{modelling_context}} (see examples)
-#' @param label the label of the variable to be displayed when printing specification or results. By default equals to `group.name`.
+#' @param group,name the name of the regressor in the format `"group.name"`, by
+#' default `"r.name"` by default if `group` NULL. `"group.name"` has to be the
+#' same as in \code{\link{modelling_context}} (see examples)
+#' @param label the label of the variable to be displayed when printing
+#' specification or results. By default equals to `group.name`.
 #' @param lag integer defining if the user-defined variable should be lagged.
-#'  By default (`lag = 0`), the regressor \eqn{x_t} is not lagged. If `lag = 1`, then \eqn{x_{t-1}} is used.
+#'  By default (`lag = 0`), the regressor \eqn{x_t} is not lagged. If `lag = 1`,
+#'  then \eqn{x_{t-1}} is used.
 #' @param coef the coefficient, if needs to be fixed.
-#' @param regeffect component to which the effect of the user-defined variable will be assigned.
+#' @param regeffect component to which the effect of the user-defined variable
+#' will be assigned.
 #' By default (`"Undefined"`), see details.
 #'
 #' @returns The modified specification (with new user-defined variables)
 #'
 #' @details
-#' \code{x} specification parameter must be a JD3_X13_SPEC" class object generated with \code{rjd3x13::x13_spec()}
-#' (or "JD3_REGARIMA_SPEC" generated with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC"
-#' generated with \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
+#' \code{x} specification parameter must be a JD3_X13_SPEC" class object
+#' generated with \code{rjd3x13::x13_spec()} (or "JD3_REGARIMA_SPEC" generated
+#' with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC" generated with
+#' \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
 #' \code{rjd3tramoseats::spec_tramo()}).
 #' Components to which the effect of the regressor can be allocated:
-#' - \code{"Undefined"} : the effect of the regressor is assigned to an additional component,
-#' the variable is used to improve the pre-processing step, but is not removed from the series
-#' for the decomposition.
+#' - \code{"Undefined"} : the effect of the regressor is assigned to an
+#' additional component, the variable is used to improve the pre-processing
+#' step, but is not removed from the series for the decomposition.
 #' \itemize{
-#'   \item \code{"Trend"}: after the decomposition the effect is allocated to the trend component, like a Level-Shift
-#'   \item \code{"Irregular"}: after the decomposition the effect is allocated to the irregular component, like an Additive-outlier
-#'   \item \code{"Seasonal"}: after the decomposition the effect is allocated to the seasonal component, like a Seasonal-outlier
-#'   \item \code{"Series"}: after the decomposition the effect is allocated to the raw series: \eqn{yc_t=y_t+ effect}
-#'   \item \code{"SeasonallyAdjusted"}: after the decomposition the effect is allocated to the seasonally adjusted series: \eqn{sa_t=T+I+effect}
+#'   \item \code{"Trend"}: after the decomposition the effect is allocated to
+#'   the trend component, like a Level-Shift
+#'   \item \code{"Irregular"}: after the decomposition the effect is allocated
+#'   to the irregular component, like an Additive-outlier
+#'   \item \code{"Seasonal"}: after the decomposition the effect is allocated
+#'   to the seasonal component, like a Seasonal-outlier
+#'   \item \code{"Series"}: after the decomposition the effect is allocated to
+#'   the raw series: \eqn{yc_t=y_t+ effect}
+#'   \item \code{"SeasonallyAdjusted"}: after the decomposition the effect is
+#'   allocated to the seasonally adjusted series: \eqn{sa_t=T+I+effect}
 #' }
 #'
 #' @examplesIf current_java_version >= minimal_java_version

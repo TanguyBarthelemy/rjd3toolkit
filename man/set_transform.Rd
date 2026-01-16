@@ -17,21 +17,37 @@ set_transform(
 \item{x}{the specification to customize, must be a "SPEC" class object (see
 details).}
 
-\item{fun}{the transformation of the input series: \code{"None"} = no transformation of the series;
-\code{"Log"} = takes the log of the series; \code{"Auto"} = the program tests for the log-level specification.}
+\item{fun}{the transformation of the input series:
+\enumerate{
+\item \code{"None"} = no transformation of the series;
+\item \code{"Log"} = takes the log of the series;
+\item \code{"Auto"} = the program tests for the log-level specification.
+}}
 
-\item{adjust}{pre-adjustment of the input series for the length of period or leap year effects:
-\code{"None"} = no adjustment; \code{"LeapYear"} = leap year effect; \code{"LengthOfPeriod"} = length of period.
-Modifications of this variable are taken into account only when \code{function = "Log"}.}
+\item{adjust}{pre-adjustment of the input series for the length of period or
+leap year effects:
+\enumerate{
+\item \code{"None"} = no adjustment;
+\item \code{"LeapYear"} = leap year effect;
+\item \code{"LengthOfPeriod"} = length of period.
+}
+Modifications of this variable are taken into account only when
+\code{function = "Log"}.}
 
-\item{outliers}{Boolean indicating if a pre-correction for large outliers (AO and LS only) should be done
-in the test for the log-level specification (\code{fun = "Auto"}). By default to \code{FALSE}.}
+\item{outliers}{Boolean indicating if a pre-correction for large outliers
+(AO and LS only) should be done in the test for the log-level specification
+(\code{fun = "Auto"}). By default to \code{FALSE}.}
 
-\item{aicdiff}{(REGARIMA/X-13 specific)  a numeric defining the difference in AICC needed to accept no transformation when the automatic
-transformation selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.}
+\item{aicdiff}{(REGARIMA/X-13 specific)  a numeric defining the difference
+in AICC needed to accept no transformation when the automatic transformation
+selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.}
 
-\item{fct}{(TRAMO specific) \code{numeric} controlling the bias in the log/level pre-test:
-\code{transform.fct}> 1 favours levels, \code{transform.fct}< 1 favours logs.
+\item{fct}{(TRAMO specific) \code{numeric} controlling the bias in the
+log/level pre-test:
+\enumerate{
+\item \code{transform.fct} > 1 favours levels;
+\item \code{transform.fct}< 1 favours logs.
+}
 Considered only when \code{fun = "Auto"}.}
 }
 \value{
@@ -41,9 +57,10 @@ The modified specification (with log/level transformation scheme)
 Set Log-level Transformation and Decomposition scheme in Pre-Processing Specification
 }
 \details{
-\code{x} specification parameter must be a JD3_X13_SPEC" class object generated with \code{rjd3x13::x13_spec()}
-(or "JD3_REGARIMA_SPEC" generated with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC"
-generated with \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
+\code{x} specification parameter must be a JD3_X13_SPEC" class object
+generated with \code{rjd3x13::x13_spec()} (or "JD3_REGARIMA_SPEC" generated
+with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC" generated with
+\code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
 \code{rjd3tramoseats::spec_tramo()}).
 }
 \examples{
