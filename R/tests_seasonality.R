@@ -51,7 +51,6 @@ seasonality_qs <- function(data, period = NA, nyears = 0, type = 1) {
 #' s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
 #' seasonality_modified_qs(s)
 #'
-
 seasonality_modified_qs <- function(data, period = NA, nyears = 0) {
     if (is.ts(data) && missing(period)) {
         period <- frequency(data)
@@ -183,6 +182,8 @@ seasonality_f <- function(data,
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #' s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
+#' dput(s)
+#' print(dput(s))
 #' seasonality_combined(s)
 #' seasonality_combined(random_t(2, 1000), 7)
 #'
