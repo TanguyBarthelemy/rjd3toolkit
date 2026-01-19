@@ -183,7 +183,6 @@ seasonality_f <- function(data,
 #' @examplesIf current_java_version >= minimal_java_version
 #' s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
 #' dput(s)
-#' print(dput(s))
 #' seasonality_combined(s)
 #' seasonality_combined(random_t(2, 1000), 7)
 #'
@@ -192,8 +191,13 @@ seasonality_combined <- function(data, period = NA, firstperiod = cycle(data)[1]
         period <- frequency(data)
     }
     jctest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/sa/base/core/tests/CombinedSeasonality;", "combinedTest",
-        as.numeric(data), as.integer(period), as.integer(firstperiod - 1), as.logical(mul)
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "Ljdplus/sa/base/core/tests/CombinedSeasonality;",
+        method = "combinedTest",
+        as.numeric(data),
+        as.integer(period),
+        as.integer(firstperiod - 1),
+        as.logical(mul)
     )
     q <- .jcall("jdplus/sa/base/r/SeasonalityTests", "[B", "toBuffer", jctest)
     p <- RProtoBuf::read(sa.CombinedSeasonalityTest, q)

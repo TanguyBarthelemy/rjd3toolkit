@@ -35,7 +35,6 @@ Combined test on the presence of identifiable seasonality (see Ladiray and Quenn
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
 dput(s)
-print(dput(s))
 seasonality_combined(s)
 seasonality_combined(random_t(2, 1000), 7)
 \dontshow{\}) # examplesIf}
