@@ -46,16 +46,21 @@ NULL
 #' }
 #' }
 #'
-#' @returns a \code{JD3_TEST} object with value, p-value and information about the distribution
+#' @returns a \code{JD3_TEST} object with value, p-value and information about
+#' the distribution
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #' td_f(ABS$X0.2.09.10.M)
 #' @export
-td_f <- function(s, model = c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100"), nyears = 0) {
+td_f <- function(s,
+                 model = c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100"),
+                 nyears = 0) {
     model <- match.arg(model)
     jts <- .r2jd_tsdata(s)
     jtest <- .jcall(
-        "jdplus/toolkit/base/r/modelling/TradingDaysTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "fTest",
+        obj = "jdplus/toolkit/base/r/modelling/TradingDaysTests",
+        returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",
+        method = "fTest",
         jts, model, as.integer(nyears)
     )
     return(.jd2r_test(jtest))
@@ -66,26 +71,36 @@ td_f <- function(s, model = c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100
 #' @inheritParams td_f
 #' @param differencing Differencing lags.
 #' @param kernel Kernel used to compute the robust covariance matrix.
-#' @param order The truncation parameter used to compute the robust covariance matrix.
+#' @param order The truncation parameter used to compute the robust covariance
+#' matrix.
 #'
-#' @returns list with the ftest on td, the joint test and the details for the stability of the different days (starting with Mondays).
+#' @returns list with the ftest on td, the joint test and the details for the
+#' stability of the different days (starting with Mondays).
 #' @export
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #' s <- log(ABS$X0.2.20.10.M)
 #' td_canovahansen(s, c(1, 12))
-td_canovahansen <- function(s, differencing, kernel = c("Bartlett", "Square", "Welch", "Tukey", "Hamming", "Parzen"),
+td_canovahansen <- function(s, differencing,
+                            kernel = c("Bartlett", "Square", "Welch", "Tukey", "Hamming", "Parzen"),
                             order = NA) {
     kernel <- match.arg(kernel)
     if (is.na(order)) order <- -1
     jts <- .r2jd_tsdata(s)
     q <- .jcall(
-        "jdplus/toolkit/base/r/modelling/TradingDaysTests", "[D", "canovaHansen",
+        obj = "jdplus/toolkit/base/r/modelling/TradingDaysTests",
+        returnSig = "[D",
+        method = "canovaHansen",
         jts, .jarray(as.integer(differencing)), kernel, as.integer(order)
     )
 
     last <- length(q)
-    return(list(td = list(value = q[last - 1], pvalue = q[last]), joint = q[last - 2], details = q[-c(last - 2, last - 1, last)]))
+    output <- list(
+        td = list(value = q[last - 1], pvalue = q[last]),
+        joint = q[last - 2],
+        details = q[-c(last - 2, last - 1, last)]
+    )
+    return(output)
 }
 
 #' @title Likelihood ratio test on time varying trading days
@@ -94,7 +109,8 @@ td_canovahansen <- function(s, differencing, kernel = c("Bartlett", "Square", "W
 #' @param groups The groups of days used to generate the regression variables.
 #' @param contrasts The covariance matrix of the multivariate random walk model
 #' used for the time-varying coefficients are related to the contrasts if TRUE,
-#' on the actual number of days (all the days are driven by the same variance) if FALSE.
+#' on the actual number of days (all the days are driven by the same variance)
+#' if FALSE.
 #'
 #' @returns A Chi2 test
 #' @export
@@ -106,7 +122,9 @@ td_timevarying <- function(s, groups = c(1, 2, 3, 4, 5, 6, 0), contrasts = FALSE
     jts <- .r2jd_tsdata(s)
     igroups <- as.integer(groups)
     jtest <- .jcall(
-        "jdplus/toolkit/base/r/modelling/TradingDaysTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "timeVaryingTradingDaysTest",
+        obj = "jdplus/toolkit/base/r/modelling/TradingDaysTests",
+        returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",
+        method = "timeVaryingTradingDaysTest",
         jts, igroups, as.logical(contrasts)
     )
     return(.jd2r_test(jtest))
