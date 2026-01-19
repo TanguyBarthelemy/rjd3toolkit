@@ -135,11 +135,11 @@
     } else if (.jinstanceof(s, "[Ljdplus/toolkit/base/api/data/Parameter;")) {
         p <- .jcastToArray(s)
         len <- length(p)
-        all <- array(0, dim = c(len))
+        all_values <- array(0, dim = c(len))
         for (i in 1:len) {
-            all[i] <- .jcall(p[[i]], "D", "getValue")
+            all_values[i] <- .jcall(p[[i]], "D", "getValue")
         }
-        return(all)
+        return(all_values)
     } else if (.jcall(.jcall(s, "Ljava/lang/Class;", "getClass"), "Z", "isArray")) {
         return(.jevalArray(s, silent = TRUE))
     } else if (.jinstanceof(s, "jdplus/toolkit/base/api/stats/StatisticalTest")) {

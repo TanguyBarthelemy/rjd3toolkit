@@ -254,11 +254,10 @@ dynamic_ts <- function(moniker, data) {
         stop("All the variables of the list should be named")
     }
     n <- length(ns)
-    all <- lapply(1:n, function(z) {
+    p <- jd3.TsDataSuppliers$new()
+    p$items <- lapply(1:n, function(z) {
         .r2p_datasupplier(ns[z], r[[z]])
     })
-    p <- jd3.TsDataSuppliers$new()
-    p$items <- all
     return(p)
 }
 

@@ -136,22 +136,22 @@ print.summary.JD3_SARIMA_ESTIMATION <- function(x,
     if (!is.null(m$bphi)) bp <- dim(m$bphi)[2] else bp <- 0
     if (!is.null(m$btheta)) bq <- dim(m$btheta)[2] else bq <- 0
     sarima_orders <- list(p = p, d = m$d, q = q, bp = bp, bd = m$bd, bq = bq)
-    names <- NULL
+    sarima_names <- NULL
     if (p > 0) {
-        names <- c(names, paste0("phi(", 1:p, ")"))
+        sarima_names <- c(sarima_names, paste0("phi(", 1:p, ")"))
     }
     if (q > 0) {
-        names <- c(names, paste0("theta(", 1:q, ")"))
+        sarima_names <- c(sarima_names, paste0("theta(", 1:q, ")"))
     }
     if (bp > 0) {
-        names <- c(names, paste0("bphi(", 1:bp, ")"))
+        sarima_names <- c(sarima_names, paste0("bphi(", 1:bp, ")"))
     }
     if (bq > 0) {
-        names <- c(names, paste0("btheta(", 1:bq, ")"))
+        sarima_names <- c(sarima_names, paste0("btheta(", 1:bq, ")"))
     }
-    if (!is.null(names)) {
+    if (!is.null(sarima_names)) {
         all <- t(cbind(m$phi, m$theta, m$bphi, m$btheta))
-        fr <- as.data.frame(all, row.names = names)
+        fr <- as.data.frame(all, row.names = sarima_names)
         for (i in colnames(fr)) {
             fr[, i] <- unlist(fr[, i])
         }

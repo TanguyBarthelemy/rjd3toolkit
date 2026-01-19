@@ -241,8 +241,8 @@ ts_adjust.data.frame <- function(s, method = c("LeapYear", "LengthOfPeriod"), re
 #' daysOf(Retail$BookStores)
 #'
 daysOf <- function(ts, pos = 1) {
-    start <- start(ts)
-    jdom <- .r2jd_tsdomain(frequency(ts), start[1], start[2], length(ts))
+    starting_date <- start(ts)
+    jdom <- .r2jd_tsdomain(frequency(ts), starting_date[1], starting_date[2], length(ts))
     days <- .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "[S", "daysOf", jdom, as.integer(pos - 1))
     return(as.Date(days))
 }

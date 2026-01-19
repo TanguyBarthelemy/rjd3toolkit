@@ -94,13 +94,13 @@ NULL
     if (size == 0) {
         return(NULL)
     }
-    all <- lapply(
+    output <- lapply(
         X = 1:size,
         FUN = function(idx) {
             return(.jd2r_ts(.extract_jts(s, idx)))
         }
     )
-    return(all)
+    return(output)
 }
 
 #' @export

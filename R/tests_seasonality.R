@@ -85,9 +85,8 @@ seasonality_kruskalwallis <- function(data, period, nyears = 0) {
     if (is.ts(data) && missing(period)) {
         period <- frequency(data)
     }
-    jtest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "kruskalWallisTest",
-        as.numeric(data), as.integer(period), as.integer(nyears)
+    jtest <- .jcall("jdplus/sa/base/r/SeasonalityTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "kruskalWallisTest",
+                    as.numeric(data), as.integer(period), as.integer(nyears)
     )
     return(.jd2r_test(jtest))
 }
@@ -110,7 +109,9 @@ seasonality_periodogram <- function(data, period = NA, nyears = 0) {
         period <- frequency(data)
     }
     jtest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "periodogramTest",
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",
+        method = "periodogramTest",
         as.numeric(data), as.integer(period), as.integer(nyears)
     )
     return(.jd2r_test(jtest))
@@ -121,7 +122,8 @@ seasonality_periodogram <- function(data, period = NA, nyears = 0) {
 #' @inheritParams seasonality_qs
 #'
 #' @details Non parametric test ("ANOVA"-type).
-#' @returns A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
+#' @returns A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for
+#' details).
 #' @export
 #'
 #' @examplesIf current_java_version >= minimal_java_version
@@ -134,7 +136,9 @@ seasonality_friedman <- function(data, period = NA, nyears = 0) {
         period <- frequency(data)
     }
     jtest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "friedmanTest",
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",
+        method = "friedmanTest",
         as.numeric(data), as.integer(period), as.integer(nyears)
     )
     return(.jd2r_test(jtest))
@@ -144,8 +148,13 @@ seasonality_friedman <- function(data, period = NA, nyears = 0) {
 #'
 #' @inheritParams seasonality_qs
 #' @param model the model to use for the residuals.
-#' @details Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
-#' @returns A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for details).
+#'
+#' @details Estimation of a model with seasonal dummies. Joint F-test on the
+#' coefficients of the dummies.
+#'
+#' @returns A `c("JD3_TEST", "JD3")` object (see [statisticaltest()] for
+#' details).
+#'
 #' @export
 #'
 #' @examplesIf current_java_version >= minimal_java_version
@@ -161,7 +170,9 @@ seasonality_f <- function(data,
     }
     model <- match.arg(model)
     jtest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;", "fTest",
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",
+        method = "fTest",
         as.numeric(data), as.integer(period), model, as.integer(nyears)
     )
     return(.jd2r_test(jtest))
@@ -174,18 +185,24 @@ seasonality_f <- function(data,
 #' @param firstperiod Position in a cycle of the first obs.
 #' For example, for a monthly, `firstperiod = 1` means January.
 #' If `data` is not a `"ts"` object, `firstperiod = 1` by default.
-#' @param mul boolean indicating if the seasonal decomposition is multiplicative (`mul = TRUE`) or additive (`mul = FALSE`).
+#' @param mul boolean indicating if the seasonal decomposition is
+#' multiplicative (`mul = TRUE`) or additive (`mul = FALSE`).
 #'
-#' @details Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
+#' @details Combined test on the presence of identifiable seasonality (see
+#' Ladiray and Quenneville, 1999).
+#'
 #' @export
-#' @returns a \code{list} with several seasonnality tests (kruskalwallis, stable and evolutive)
+#'
+#' @returns a \code{list} with several seasonnality tests (kruskalwallis,
+#' stable and evolutive)
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #' s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
 #' seasonality_combined(s)
 #' seasonality_combined(random_t(2, 1000), 7)
 #'
-seasonality_combined <- function(data, period = NA, firstperiod = cycle(data)[1], mul = TRUE) {
+seasonality_combined <- function(data, period = NA,
+                                 firstperiod = cycle(data)[1], mul = TRUE) {
     if (is.ts(data) && missing(period)) {
         period <- frequency(data)
     }
@@ -216,8 +233,10 @@ seasonality_combined <- function(data, period = NA, firstperiod = cycle(data)[1]
 #' @param periods Periodicities.
 #' @param lag1 Lagged variable in the regression model.
 #' @param kernel Kernel used to compute the robust Newey-West covariance matrix.
-#' @param order The truncation parameter used to compute the robust Newey-West covariance matrix.
-#' @param original `TRUE` for original algorithm, `FALSE` for solution proposed by T. Proietti (based on Ox code).
+#' @param order The truncation parameter used to compute the robust Newey-West
+#' covariance matrix.
+#' @param original `TRUE` for original algorithm, `FALSE` for solution proposed
+#' by T. Proietti (based on Ox code).
 #'
 #' @export
 #'
@@ -249,12 +268,14 @@ seasonality_canovahansen_trigs <- function(data, periods, lag1 = TRUE,
 #' @param type Trigonometric variables, seasonal dummies or seasonal contrasts.
 #' @param lag1 Lagged variable in the regression model.
 #' @param kernel Kernel used to compute the robust Newey-West covariance matrix.
-#' @param order The truncation parameter used to compute the robust Newey-West covariance matrix.
+#' @param order The truncation parameter used to compute the robust Newey-West
+#' covariance matrix.
 #' @param start Position of the first observation of the series
 #'
-#' @returns list with the FTest on seasonal variables, the joint test and the details for the stability of the different seasonal variables
-#' @export
+#' @returns list with the FTest on seasonal variables, the joint test and the
+#' details for the stability of the different seasonal variables.
 #'
+#' @export
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #' s <- log(ABS$X0.2.20.10.M)
@@ -268,12 +289,22 @@ seasonality_canovahansen <- function(data, period, type = c("Contrast", "Dummy",
     kernel <- match.arg(kernel)
     if (is.na(order)) order <- -1
 
-    q <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "[D", "canovaHansen",
+    ch_statistics <- .jcall(
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "[D",
+        method = "canovaHansen",
         as.numeric(data), as.integer(period),
         type, as.logical(lag1),
         kernel, as.integer(order), as.integer(start - 1)
     )
-    last <- length(q)
-    return(list(seasonality = list(value = q[last - 1], pvalue = q[last]), joint = q[last - 2], details = q[-c(last - 2, last - 1, last)]))
+    last <- length(ch_statistics)
+    output <- list(
+        seasonality = list(
+            value = ch_statistics[last - 1],
+            pvalue = ch_statistics[last]
+        ),
+        joint = ch_statistics[last - 2],
+        details = ch_statistics[-c(last - 2, last - 1, last)]
+    )
+    return(output)
 }
