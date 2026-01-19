@@ -2,7 +2,6 @@
 NULL
 #> NULL
 
-
 .jd2r_test <- function(jtest) {
     if (is.jnull(jtest)) {
         return(NULL)
@@ -13,7 +12,6 @@ NULL
         return(statisticaltest(val, pval, desc))
     }
 }
-
 
 .jd2r_regression_item <- function(s) {
     desc <- .jcall(s, "S", "getDescription")
