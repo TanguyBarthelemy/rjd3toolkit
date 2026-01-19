@@ -355,7 +355,7 @@ get_date_max()
 
 \item{rspan, rslt, subclasses, result}{parameters.}
 
-\item{spec, start, end, name, period, type, code, prefix, span, full, subclasses}{parameters.}
+\item{spec, start, end, name, period, type, code, prefix, span, full}{parameters.}
 
 \item{model}{Model}
 

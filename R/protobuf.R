@@ -12,7 +12,7 @@ NULL
 #' @param p,r parameters.
 #' @param jucm,jd,jcontext,jobjRef,jcals parameters.
 #' @param pcalendar parameters.
-#' @param spec,start,end,name,period,type,code,prefix,span,full,subclasses parameters.
+#' @param spec,start,end,name,period,type,code,prefix,span,full parameters.
 #' @param rspan,rslt,subclasses,result parameters.
 #' @param s Time series
 #' @param js Java time series
