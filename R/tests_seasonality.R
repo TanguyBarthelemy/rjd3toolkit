@@ -51,7 +51,6 @@ seasonality_qs <- function(data, period = NA, nyears = 0, type = 1) {
 #' s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
 #' seasonality_modified_qs(s)
 #'
-
 seasonality_modified_qs <- function(data, period = NA, nyears = 0) {
     if (is.ts(data) && missing(period)) {
         period <- frequency(data)
@@ -191,8 +190,13 @@ seasonality_combined <- function(data, period = NA, firstperiod = cycle(data)[1]
         period <- frequency(data)
     }
     jctest <- .jcall(
-        "jdplus/sa/base/r/SeasonalityTests", "Ljdplus/sa/base/core/tests/CombinedSeasonality;", "combinedTest",
-        as.numeric(data), as.integer(period), as.integer(firstperiod - 1), as.logical(mul)
+        obj = "jdplus/sa/base/r/SeasonalityTests",
+        returnSig = "Ljdplus/sa/base/core/tests/CombinedSeasonality;",
+        method = "combinedTest",
+        as.numeric(data),
+        as.integer(period),
+        as.integer(firstperiod - 1),
+        as.logical(mul)
     )
     q <- .jcall("jdplus/sa/base/r/SeasonalityTests", "[B", "toBuffer", jctest)
     p <- RProtoBuf::read(sa.CombinedSeasonalityTest, q)
