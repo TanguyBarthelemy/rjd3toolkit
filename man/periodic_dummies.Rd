@@ -27,9 +27,11 @@ a \code{mts} object with \code{frequency} column
 Periodic dummies and contrasts
 }
 \details{
-The function \code{periodic_dummies()} creates as many time series as types of periods in a year (4 or 12)
-with the value one only for one given type of period (ex Q1)
-The \code{periodic_contrasts()} function is based on periodic_dummies but adds -1 to the period preceding a 1.
+The function \code{periodic_dummies()} creates as many time series as types
+of periods in a year (4 or 12) with the value one only for one given type of
+period (ex Q1).
+The \code{periodic_contrasts()} function is based on periodic_dummies but
+adds -1 to the period preceding a 1.
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}

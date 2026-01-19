@@ -28,18 +28,21 @@ variables. Can also be provided with the \code{s} argument}
 \item{s}{time series used to get the dates for the trading days variables.
 If supplied the parameters \code{frequency}, \code{start} and \code{length} are ignored.}
 
-\item{duration}{Duration (length in days) of the Easter effect. (value between 1 and 20, default =6)}
+\item{duration}{Duration (length in days) of the Easter effect. (value
+between 1 and 20, default =6)}
 
 \item{endpos}{Position of the end of the Easter effect, relatively to Easter:
 -1(default): before Easter Sunday, 0: on Easter Sunday, 1: on Easter Monday)}
 
-\item{correction}{mean correction option. Simple"(default), "PreComputed", "Theoretical" or "None".}
+\item{correction}{mean correction option. Simple"(default), "PreComputed",
+"Theoretical" or "None".}
 }
 \value{
 A time series (object of class \code{"ts"})
 }
 \description{
-Allows to generate a regressor taking into account the (Julian) Easter effect in monthly or quarterly time series.
+Allows to generate a regressor taking into account the (Julian) Easter effect
+in monthly or quarterly time series.
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}

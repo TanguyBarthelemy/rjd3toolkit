@@ -17,8 +17,9 @@ variables. Can also be provided with the \code{s} argument}
 \item{s}{time series used to get the dates for the trading days variables.
 If supplied the parameters \code{frequency}, \code{start} and \code{length} are ignored.}
 
-\item{range}{the range of the regressor. A vector of length 2 containing the datesin the format \code{"YYYY-MM-DD"}
-or the position in the series, in number of periods from counting from the series start.}
+\item{range}{the range of the regressor. A vector of length 2 containing the
+dates in the format \code{"YYYY-MM-DD"} or the position in the series, in
+number of periods from counting from the series start.}
 }
 \value{
 a \code{ts} object
@@ -41,7 +42,8 @@ A ramp between two dates \eqn{t_0} and \eqn{t_1} is defined as:
 # Ramp variable from January 2001 to September 2001
 rp <- ramp_variable(12, c(2000, 1), length = 12 * 4, range = c(13, 21))
 # Or equivalently
-rp <- ramp_variable(12, c(2000, 1), length = 12 * 4, range = c("2001-01-01", "2001-09-02"))
+rp <- ramp_variable(12, c(2000, 1), length = 12 * 4,
+                    range = c("2001-01-01", "2001-09-02"))
 plot.ts(rp)
 \dontshow{\}) # examplesIf}
 }

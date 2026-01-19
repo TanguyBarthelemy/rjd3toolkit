@@ -27,9 +27,10 @@ a mts object with 2 columns
 Generates trigonometric variables at different frequencies.
 }
 \details{
-Denote by \eqn{P} the value of \code{frequency} (= the period) and
-\eqn{f_1}, ..., \eqn{f_n} the frequencies provides by \code{seasonal_frequency}
-(if \code{seasonal_frequency = NULL} then \eqn{n=\lfloor P/2\rfloor} and \eqn{f_i}=i).
+Denote by \eqn{P} the value of \code{frequency} (= the period) and \eqn{f_1}, ...,
+\eqn{f_n} the frequencies provides by \code{seasonal_frequency} (if
+\code{seasonal_frequency = NULL} then \eqn{n=\lfloor P/2\rfloor} and
+\eqn{f_i}=i).
 
 \code{trigonometric_variables} returns a matrix of size \eqn{length\times(2n)}.
 
@@ -44,11 +45,13 @@ the columns \eqn{2i} and \eqn{2i-1} are equal to:
 \frac{2 \pi}{P} \times m \times f_i
 \right)
 }
-Take for example the case when the first date (\code{date}) is a January, \code{frequency = 12}
-(monthly time series), \code{length = 12} and \code{seasonal_frequency = NULL}.
-The first frequency, \eqn{\lambda_1 = 2\pi /12} represents the fundamental seasonal frequency and the
-other frequencies (\eqn{\lambda_2 = 2\pi /12 \times 2}, ..., \eqn{\lambda_6 = 2\pi /12 \times 6})
-are the five harmonics. The output matrix will be equal to:
+Take for example the case when the first date (\code{date}) is a January,
+\code{frequency = 12} (monthly time series), \code{length = 12} and
+\code{seasonal_frequency = NULL}.
+The first frequency, \eqn{\lambda_1 = 2\pi /12} represents the fundamental
+seasonal frequency and the other frequencies (
+\eqn{\lambda_2 = 2\pi /12 \times 2}, ..., \eqn{\lambda_6 = 2\pi /12 \times 6}
+) are the five harmonics. The output matrix will be equal to:
 \deqn{
 \begin{pmatrix}
 \cos(\lambda_1) & \sin (\lambda_1) & \cdots &
