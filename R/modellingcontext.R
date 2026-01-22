@@ -137,10 +137,10 @@ dynamic_ts <- function(moniker, data) {
         return(NULL)
     } else {
         rs <- lapply(p$series, FUN = .p2r_ts)
-        names <- lapply(rs, function(s) {
+        ts_names <- lapply(rs, function(s) {
             return(s$name)
         })
-        rs <- `names<-`(rs, names)
+        rs <- `names<-`(rs, ts_names)
         return(.tscollection(p$name, .p2r_moniker(p$moniker), .p2r_metadata(p$metadata), rs))
     }
 }

@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN
-status](https://www.r-pkg.org/badges/version/rjd3toolkit)](https://CRAN.R-project.org/package=rjd3toolkit)
+status](https://www.r-pkg.org/badges/version/rjd3toolkit)](https://cran.r-project.org/package=rjd3toolkit)
 [![Mentioned in Awesome Official
 Statistics](https://awesome.re/mentioned-badge.svg)](https://github.com/SNStatComp/awesome-official-statistics-software)
 

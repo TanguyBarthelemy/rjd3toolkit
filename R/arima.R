@@ -171,8 +171,8 @@ arima_model <- function(name = "arima", ar = 1, delta = 1, ma = 1, variance = 1)
 
 
 .jd2r_sarima <- function(jsarima) {
-    q <- .jcall("jdplus/toolkit/base/r/arima/SarimaModels", "[B", "toBuffer", jsarima)
-    rq <- RProtoBuf::read(modelling.SarimaModel, q)
+    sarima_model <- .jcall("jdplus/toolkit/base/r/arima/SarimaModels", "[B", "toBuffer", jsarima)
+    rq <- RProtoBuf::read(modelling.SarimaModel, sarima_model)
     return(.p2r_sarima(rq))
 }
 
@@ -194,8 +194,8 @@ arima_model <- function(name = "arima", ar = 1, delta = 1, ma = 1, variance = 1)
 
 
 .jd2r_arima <- function(jarima) {
-    q <- .jcall("jdplus/toolkit/base/r/arima/ArimaModels", "[B", "toBuffer", jarima)
-    rq <- RProtoBuf::read(modelling.ArimaModel, q)
+    arima_model <- .jcall("jdplus/toolkit/base/r/arima/ArimaModels", "[B", "toBuffer", jarima)
+    rq <- RProtoBuf::read(modelling.ArimaModel, arima_model)
     return(.p2r_arima(rq))
 }
 
@@ -237,12 +237,12 @@ arima_sum <- function(...) {
 }
 
 arima_lsum <- function(components) {
-    q <- .jarray(lapply(components, .r2jd_arima), "jdplus/toolkit/base/core/arima/ArimaModel")
+    arima_components <- .jarray(lapply(components, .r2jd_arima), "jdplus/toolkit/base/core/arima/ArimaModel")
     jsum <- .jcall(
         obj = "jdplus/toolkit/base/r/arima/ArimaModels",
         returnSig = "Ljdplus/toolkit/base/core/arima/ArimaModel;",
         method = "sum",
-        q
+        arima_components
     )
     return(.jd2r_arima(jsum))
 }
