@@ -21,9 +21,9 @@ statisticaltest(val, pval, dist = NULL)
 \value{
 \code{c("JD3_TEST", "JD3")} object that is a list of three parameters:
 \itemize{
-\item{\code{value}} the statistical value of the test.
-\item{\code{pvalue}} the p-value of the test.
-\item{\code{distribution}} the statistical distribution used.
+\item \code{value}: the statistical value of the test.
+\item \code{pvalue}: the p-value of the test.
+\item \code{distribution}: the statistical distribution used.
 }
 }
 \description{

@@ -19,9 +19,14 @@ remove_ramp(x, start = NULL, end = NULL, name = NULL)
 \item{x}{the specification to customize, must be a "SPEC" class object (see
 details).}
 
-\item{type, date}{type and date of the outliers. Possible \code{type} are:
-\code{"AO"} = additive, \code{"LS"} = level shift, \code{"TC"} = transitory
-change and \code{"SO"} = seasonal outlier.}
+\item{type, date}{type and date of the outliers.
+Possible \code{type} are:
+\itemize{
+\item \code{"AO"}: additive;
+\item \code{"LS"}: level shift;
+\item \code{"TC"}: transitory change;
+\item \code{"SO"}: seasonal outlier.
+}}
 
 \item{name}{the name of the variable (to format print).}
 

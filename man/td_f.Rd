@@ -22,7 +22,8 @@ number of periods (positive value) or years (negative values).
 By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-a \code{JD3_TEST} object with value, p-value and information about the distribution
+a \code{JD3_TEST} object with value, p-value and information about
+the distribution
 }
 \description{
 Residual Trading Days Test

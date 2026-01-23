@@ -18,21 +18,21 @@ set_transform(
 details).}
 
 \item{fun}{the transformation of the input series:
-\enumerate{
-\item \code{"None"} = no transformation of the series;
-\item \code{"Log"} = takes the log of the series;
-\item \code{"Auto"} = the program tests for the log-level specification.
+\itemize{
+\item \code{"None"}: no transformation of the series;
+\item \code{"Log"}: takes the log of the series;
+\item \code{"Auto"}: the program tests for the log-level specification.
 }}
 
 \item{adjust}{pre-adjustment of the input series for the length of period or
 leap year effects:
-\enumerate{
-\item \code{"None"} = no adjustment;
-\item \code{"LeapYear"} = leap year effect;
-\item \code{"LengthOfPeriod"} = length of period.
-}
+\itemize{
+\item \code{"None"}: no adjustment;
+\item \code{"LeapYear"}: leap year effect;
+\item \code{"LengthOfPeriod"}: length of period.
 Modifications of this variable are taken into account only when
-\code{function = "Log"}.}
+\code{function = "Log"}.
+}}
 
 \item{outliers}{Boolean indicating if a pre-correction for large outliers
 (AO and LS only) should be done in the test for the log-level specification
@@ -44,11 +44,11 @@ selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.}
 
 \item{fct}{(TRAMO specific) \code{numeric} controlling the bias in the
 log/level pre-test:
-\enumerate{
+\itemize{
 \item \code{transform.fct} > 1 favours levels;
-\item \code{transform.fct}< 1 favours logs.
-}
-Considered only when \code{fun = "Auto"}.}
+\item \code{transform.fct} < 1 favours logs.
+Considered only when \code{fun = "Auto"}.
+}}
 }
 \value{
 The modified specification (with log/level transformation scheme)

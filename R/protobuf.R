@@ -25,6 +25,7 @@ NULL
 #' @param jrslt Reference to a Java object
 #' @param source Source of the time series information
 #' @param id Identifier of the time series information (source-dependent)
+#'
 #' @name jd3_utilities
 NULL
 #> NULL

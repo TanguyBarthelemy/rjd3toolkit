@@ -25,9 +25,12 @@ details).}
 \item{mean}{to fix the coefficient of the mean. If \code{mean = 0}, the mean is disabled.}
 
 \item{mean.type}{a character defining the mean coefficient estimation procedure.
-Possible procedures are: \code{"Undefined"} = no use of any user-defined input (i.e. coefficient is estimated),
-\code{"Fixed"} = the coefficients are fixed at the value provided by the user,
-\code{"Initial"} = the value defined by the user is used as the initial condition.}
+Possible procedures are:
+\itemize{
+\item \code{"Undefined"}: no use of any user-defined input (i.e. coefficient is estimated);
+\item \code{"Fixed"}: the coefficients are fixed at the value provided by the user;
+\item \code{"Initial"}: the value defined by the user is used as the initial condition.
+}}
 
 \item{p, d, q, bp, bd, bq}{to specify the order of the SARIMA model in the form ARIMA(p,d,q)(bp,bd,bd).}
 
@@ -39,9 +42,12 @@ and seasonal MA (\emph{BTheta}; \code{bq} elements).
 E.g.: \code{arima.coef=c(0.6,0.7)} with \code{p=1, q=0,bp=1} and \code{bq=0}.}
 
 \item{coef.type}{a vector defining the ARMA coefficients estimation procedure.
-Possible procedures are: \code{"Undefined"} = no use of any user-defined input (i.e. coefficients are estimated),
-\code{"Fixed"} = the coefficients are fixed at the value provided by the user,
-\code{"Initial"} = the value defined by the user is used as the initial condition.}
+Possible procedures are:
+\itemize{
+\item \code{"Undefined"}: no use of any user-defined input (i.e. coefficients are estimated);
+\item \code{"Fixed"}: the coefficients are fixed at the value provided by the user;
+\item \code{"Initial"}: the value defined by the user is used as the initial condition.
+}}
 }
 \value{
 The modified specification (with new ARIMA model)

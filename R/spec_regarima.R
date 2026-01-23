@@ -7,9 +7,12 @@
 #'
 #' @param x the specification to customize, must be a "SPEC" class object (see
 #' details).
-#' @param type,date type and date of the outliers. Possible \code{type} are:
-#' \code{"AO"} = additive, \code{"LS"} = level shift, \code{"TC"} = transitory
-#' change and \code{"SO"} = seasonal outlier.
+#' @param type,date type and date of the outliers.
+#' Possible \code{type} are:
+#' - `"AO"`: additive;
+#' - `"LS"`: level shift;
+#' - `"TC"`: transitory change;
+#' - `"SO"`: seasonal outlier.
 #' @param start,end dates of the ramp regressor.
 #' @param name the name of the variable (to format print).
 #' @param coef the coefficient if needs to be fixed. If equal to 0 the
@@ -261,14 +264,12 @@ remove_ramp.default <- function(x,
 #' @inheritParams add_outlier
 #'
 #' @param type,d0,d1,n0,n1 parameters to specify the sub-span .
-#'
-#' \code{d0} and \code{d1} characters in the format "YYYY-MM-DD" to specify
+#' - \code{d0} and \code{d1} characters in the format "YYYY-MM-DD" to specify
 #' first/last date of the span when \code{type} equals to \code{"From"},
 #' \code{"To"} or \code{"Between"}.
 #' Date corresponding to \code{d0} will be included in the sub-span
 #' Date corresponding to \code{d1} will be excluded from the sub span
-#'
-#' \code{n0} and \code{n1} numeric to specify the number of periods at the
+#' - \code{n0} and \code{n1} numeric to specify the number of periods at the
 #' beginning/end of the series to be used for defining the sub-span
 #' (\code{type} equals to \code{"First"}, \code{"Last"}) or to exclude
 #' (\code{type} equals to \code{"Excluding"}).
@@ -483,20 +484,20 @@ set_estimate.default <- function(x,
 #' @param span.type,d0,d1,n0,n1 parameters to specify the sub-span on which
 #' outliers will be detected.
 #'
-#' - \code{d0} and \code{d1} characters in the format "YYYY-MM-DD" to specify
+#' - `d0` and \code{d1} characters in the format "YYYY-MM-DD" to specify
 #'  first/last date of the span when \code{type} equals to \code{"From"},
 #'  \code{"To"} or \code{"Between"}.
-#' - \code{n0} and \code{n1} numerics to specify the number of periods at the
+#' - `n0` and \code{n1} numerics to specify the number of periods at the
 #'  beginning/end of the series to be used for the span (\code{type} equals to
 #'  \code{"From"}, \code{"To"}) or to exclude (\code{type} equals to
 #'  \code{"Excluding"}).
 
 #' @param outliers.type vector of characters of the outliers to be automatically
 #' detected.
-#' - \code{"AO"} for additive outliers,
-#' - \code{"TC"} for transitory changes,
-#' - \code{"LS"} for level shifts,
-#' - \code{"SO"} for seasonal outliers.
+#' - `"AO"`: for additive outliers,
+#' - `"TC"`: for transitory changes,
+#' - `"LS"`: for level shifts,
+#' - `"SO"`: for seasonal outliers.
 #' For example \code{outliers.type = c("AO", "LS")} to enable the detection of
 #' additive outliers and level shifts.
 #' If \code{outliers.type = NULL} or \code{outliers.type = character()},
@@ -887,9 +888,10 @@ set_automodel.default <- function(x,
 #' @inheritParams set_basic
 #' @param mean to fix the coefficient of the mean. If \code{mean = 0}, the mean is disabled.
 #' @param mean.type a character defining the mean coefficient estimation procedure.
-#' Possible procedures are: \code{"Undefined"} = no use of any user-defined input (i.e. coefficient is estimated),
-#' \code{"Fixed"} = the coefficients are fixed at the value provided by the user,
-#' \code{"Initial"} = the value defined by the user is used as the initial condition.
+#' Possible procedures are:
+#' - `"Undefined"`: no use of any user-defined input (i.e. coefficient is estimated);
+#' - `"Fixed"`: the coefficients are fixed at the value provided by the user;
+#' - `"Initial"`: the value defined by the user is used as the initial condition.
 #'
 #' @param p,d,q,bp,bd,bq to specify the order of the SARIMA model in the form ARIMA(p,d,q)(bp,bd,bd).
 #' @param coef a vector providing the coefficients for the regular and seasonal AR and MA polynomials.
@@ -899,9 +901,10 @@ set_automodel.default <- function(x,
 #' and seasonal MA (\emph{BTheta}; \code{bq} elements).
 #' E.g.: \code{arima.coef=c(0.6,0.7)} with \code{p=1, q=0,bp=1} and \code{bq=0}.
 #' @param coef.type a vector defining the ARMA coefficients estimation procedure.
-#' Possible procedures are: \code{"Undefined"} = no use of any user-defined input (i.e. coefficients are estimated),
-#' \code{"Fixed"} = the coefficients are fixed at the value provided by the user,
-#' \code{"Initial"} = the value defined by the user is used as the initial condition.
+#' Possible procedures are:
+#' - `"Undefined"`: no use of any user-defined input (i.e. coefficients are estimated);
+#' - `"Fixed"`: the coefficients are fixed at the value provided by the user;
+#' - `"Initial"`: the value defined by the user is used as the initial condition.
 #'
 #' @returns The modified specification (with new ARIMA model)
 #'
@@ -1084,20 +1087,20 @@ set_arima.default <- function(x,
 #' @inheritParams set_basic
 #'
 #' @param option to specify the set of trading days regression variables:
-#'  - \code{"TradingDays"} = six contrast variables, each type of day (from
-#'      Monday to Saturday) vs Sundays;
-#'  - \code{"WorkingDays"} = one working (week days) vs non-working (week-ends) day
-#'      contrast variable;
-#'  - \code{"TD2c"} = one working (Mondays to Saturdays) vs non-working (Sundays) day
-#'      contrast variable;
-#'  - \code{"TD3"} = two contrast variables: week-days vs Sundays and  Saturdays
-#'      vs Sundays;
-#'  - \code{"TD3c"} = two contrast variables: week-days (Mondays to Thursdays)
-#'      vs Sundays and  Fridays+Saturdays vs Sundays;
-#'  - \code{"TD4"} = three contrast variables: week-days (Mondays to Thursdays)
-#'      vs Sundays, Fridays vs Sundays, Saturdays vs Sundays;
-#'  - \code{"None"} = no correction for trading days;
-#'  - \code{"UserDefined"} = userdefined trading days regressors.
+#' - `"TradingDays"`: six contrast variables, each type of day (from
+#'     Monday to Saturday) vs Sundays;
+#' - `"WorkingDays"`: one working (week days) vs non-working (week-ends) day
+#'     contrast variable;
+#' - `"TD2c"`: one working (Mondays to Saturdays) vs non-working (Sundays) day
+#'     contrast variable;
+#' - `"TD3"`: two contrast variables: week-days vs Sundays and  Saturdays
+#'     vs Sundays;
+#' - `"TD3c"`: two contrast variables: week-days (Mondays to Thursdays)
+#'     vs Sundays and  Fridays+Saturdays vs Sundays;
+#' - `"TD4"`: three contrast variables: week-days (Mondays to Thursdays)
+#'     vs Sundays, Fridays vs Sundays, Saturdays vs Sundays;
+#' - `"None"`: no correction for trading days;
+#' - `"UserDefined"`: userdefined trading days regressors.
 #'
 #' @param calendar.name name (string) of the user-defined calendar to be taken
 #'  into account when generating built-in regressors set in \code{option} (if
@@ -1112,24 +1115,26 @@ set_arima.default <- function(x,
 #'  See \code{stock_td} function for details.
 #'
 #' @param test defines the pre-tests for the significance of the trading day
-#'  regression variables based on the AICC statistics: \code{"None"} = the
+#'  regression variables based on the AICC statistics:
+#'
+#'  - `"None"`: the
 #'  trading day variables are not pre-tested and are included in the model;
 #'
 #'  (REGARIMA/X-13 specific)
 #'
-#'  - \code{"Add"} = the trading day variables are not included in the initial
+#' - `"Add"`: the trading day variables are not included in the initial
 #'      regression model but can be added to the RegARIMA model after the test;
-#'  - \code{"Remove"} = the trading day variables belong to the initial
+#' - `"Remove"`: the trading day variables belong to the initial
 #'      regression model but can be removed from the RegARIMA model after the
 #'      test;
 #'
 #' (TRAMO specific)
 #'
-#'  - \code{"Separate_T"} = a t-test is applied to each trading day variable
+#' - `"Separate_T"`: a t-test is applied to each trading day variable
 #'      separately and the trading day variables are included in the RegArima
 #'      model if at least one t-statistic is greater than 2.6 or if two
 #'      t-statistics are greater than 2.0 (in absolute terms);
-#'  - \code{"Joint_F"} = a joint F-test of significance of all the trading day
+#' - `"Joint_F"`: a joint F-test of significance of all the trading day
 #'      variables. The trading day effect is significant if the F statistic is
 #'      greater than 0.95.
 #'
@@ -1151,9 +1156,9 @@ set_arima.default <- function(x,
 #'
 #' @param leapyear a \code{character} to specify whether or not to include the
 #' leap-year effect in the model:
-#' - \code{"LeapYear"} = leap year effect;
-#' - \code{"LengthOfPeriod"} = length of period (REGARIMA/X-13 specific),
-#' - \code{"None"} = no effect included.
+#' - `"LeapYear"`: leap year effect;
+#' - `"LengthOfPeriod"`: length of period (REGARIMA/X-13 specific),
+#' - `"None"`: no effect included.
 #' Default: a leap year effect regressor is included with any built-in set of
 #' trading day regressors.
 #'
@@ -1481,27 +1486,27 @@ set_tradingdays.default <- function(x,
 #' @param test defines the pre-tests for the significance of the Easter effect
 #' based on the t-statistic (the Easter effect is considered as significant if
 #' the t-statistic is greater than 1.96):
-#' \code{"Add"} = the Easter effect variable is not included in the initial
+#' -`"Add"`: the Easter effect variable is not included in the initial
 #' regression model but can be added to the RegARIMA model after the test;
-#' \code{"Remove"} = the Easter effect variable belongs to the initial
+#' -`"Remove"`: the Easter effect variable belongs to the initial
 #' regression model but can be removed from the RegARIMA model after the test;
-#' \code{"None"} = the Easter effect variable is not pre-tested and is included
+#' -`"None"`: the Easter effect variable is not pre-tested and is included
 #' in the model.
 #' @param coef to set the coefficient of the easter regressor.(Test parameter
 #' has to be set to \code{"None"})
 #' @param coef.type a character defining the easter regressor coefficient
 #' estimation procedure. Possible procedures are:
-#' \code{"Estimated"} =  coefficient is estimated,
-#' \code{"Fixed"} = the coefficients is fixed. By default the coefficient is
+#' -`"Estimated"`:  coefficient is estimated,
+#' -`"Fixed"`: the coefficients is fixed. By default the coefficient is
 #' estimated.
 #' @param type (TRAMO specific) a \code{character} that specifies the presence
 #' and the length of the Easter effect:
-#' \code{"Unused"} = the Easter effect is not considered;
-#' \code{"Standard"} = influences the period of \code{n} days strictly before
+#' -`"Unused"`: the Easter effect is not considered;
+#' -`"Standard"`: influences the period of \code{n} days strictly before
 #' Easter Sunday;
-#' \code{"IncludeEaster"} = influences the entire period (\code{n}) up to and
+#' -`"IncludeEaster"`: influences the entire period (\code{n}) up to and
 #' including Easter Sunday;
-#' \code{"IncludeEasterMonday"} = influences the entire period (\code{n}) up to
+#' -`"IncludeEasterMonday"`: influences the entire period (\code{n}) up to
 #' and including Easter Monday.
 #'
 #' @returns The modified specification (with new easter parameters)
@@ -1630,18 +1635,14 @@ set_easter.default <- function(x, enabled = NA,
 #'
 #' @inheritParams set_basic
 #' @param fun the transformation of the input series:
-#' \enumerate{
-#' \item \code{"None"} = no transformation of the series;
-#' \item \code{"Log"} = takes the log of the series;
-#' \item \code{"Auto"} = the program tests for the log-level specification.
-#' }
+#' - `"None"`: no transformation of the series;
+#' - `"Log"`: takes the log of the series;
+#' - `"Auto"`: the program tests for the log-level specification.
 #' @param adjust pre-adjustment of the input series for the length of period or
 #' leap year effects:
-#' \enumerate{
-#' \item \code{"None"} = no adjustment;
-#' \item \code{"LeapYear"} = leap year effect;
-#' \item \code{"LengthOfPeriod"} = length of period.
-#' }
+#' - `"None"`: no adjustment;
+#' - `"LeapYear"`: leap year effect;
+#' - `"LengthOfPeriod"`: length of period.
 #' Modifications of this variable are taken into account only when
 #' \code{function = "Log"}.
 #' @param outliers Boolean indicating if a pre-correction for large outliers
@@ -1652,10 +1653,8 @@ set_easter.default <- function(x, enabled = NA,
 #' selection is chosen (considered only when \code{fun = "Auto"}). Default= -2.
 #' @param fct (TRAMO specific) \code{numeric} controlling the bias in the
 #' log/level pre-test:
-#' \enumerate{
-#' \item \code{transform.fct} > 1 favours levels;
-#' \item \code{transform.fct}< 1 favours logs.
-#' }
+#' - `transform.fct` > 1 favours levels;
+#' - `transform.fct` < 1 favours logs.
 #' Considered only when \code{fun = "Auto"}.
 #'
 #' @returns The modified specification (with log/level transformation scheme)
@@ -1768,22 +1767,21 @@ set_transform.default <- function(x,
 #' with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC" generated with
 #' \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
 #' \code{rjd3tramoseats::spec_tramo()}).
+#'
 #' Components to which the effect of the regressor can be allocated:
-#' - \code{"Undefined"} : the effect of the regressor is assigned to an
+#' - `"Undefined"`: the effect of the regressor is assigned to an
 #' additional component, the variable is used to improve the pre-processing
 #' step, but is not removed from the series for the decomposition.
-#' \itemize{
-#'   \item \code{"Trend"}: after the decomposition the effect is allocated to
+#' - `"Trend"`: after the decomposition the effect is allocated to
 #'   the trend component, like a Level-Shift
-#'   \item \code{"Irregular"}: after the decomposition the effect is allocated
+#' - `"Irregular"`: after the decomposition the effect is allocated
 #'   to the irregular component, like an Additive-outlier
-#'   \item \code{"Seasonal"}: after the decomposition the effect is allocated
+#' - `"Seasonal"`: after the decomposition the effect is allocated
 #'   to the seasonal component, like a Seasonal-outlier
-#'   \item \code{"Series"}: after the decomposition the effect is allocated to
+#' - `"Series"`: after the decomposition the effect is allocated to
 #'   the raw series: \eqn{yc_t=y_t+ effect}
-#'   \item \code{"SeasonallyAdjusted"}: after the decomposition the effect is
+#' - `"SeasonallyAdjusted"`: after the decomposition the effect is
 #'   allocated to the seasonally adjusted series: \eqn{sa_t=T+I+effect}
-#' }
 #'
 #' @examplesIf current_java_version >= minimal_java_version
 #'

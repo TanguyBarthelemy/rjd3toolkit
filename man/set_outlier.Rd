@@ -39,10 +39,10 @@ beginning/end of the series to be used for the span (\code{type} equals to
 \item{outliers.type}{vector of characters of the outliers to be automatically
 detected.
 \itemize{
-\item \code{"AO"} for additive outliers,
-\item \code{"TC"} for transitory changes,
-\item \code{"LS"} for level shifts,
-\item \code{"SO"} for seasonal outliers.
+\item \code{"AO"}: for additive outliers,
+\item \code{"TC"}: for transitory changes,
+\item \code{"LS"}: for level shifts,
+\item \code{"SO"}: for seasonal outliers.
 For example \code{outliers.type = c("AO", "LS")} to enable the detection of
 additive outliers and level shifts.
 If \code{outliers.type = NULL} or \code{outliers.type = character()},

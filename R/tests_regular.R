@@ -12,11 +12,10 @@ NULL
 #' @param ... further arguments (ignored).
 #'
 #' @returns \code{c("JD3_TEST", "JD3")} object that is a list of three parameters:
-#' \itemize{
-#' \item{\code{value}} the statistical value of the test.
-#' \item{\code{pvalue}} the p-value of the test.
-#' \item{\code{distribution}} the statistical distribution used.
-#' }
+#' - `value`: the statistical value of the test.
+#' - `pvalue`: the p-value of the test.
+#' - `distribution`: the statistical distribution used.
+#'
 #' @examplesIf current_java_version >= minimal_java_version
 #' udr_test <- testofupdownruns(random_t(5, 1000))
 #' udr_test # default print

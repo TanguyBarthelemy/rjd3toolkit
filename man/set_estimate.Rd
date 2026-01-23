@@ -21,17 +21,17 @@ set_estimate(
 details).}
 
 \item{type, d0, d1, n0, n1}{parameters to specify the sub-span .
-
-\code{d0} and \code{d1} characters in the format "YYYY-MM-DD" to specify
+\itemize{
+\item \code{d0} and \code{d1} characters in the format "YYYY-MM-DD" to specify
 first/last date of the span when \code{type} equals to \code{"From"},
 \code{"To"} or \code{"Between"}.
 Date corresponding to \code{d0} will be included in the sub-span
 Date corresponding to \code{d1} will be excluded from the sub span
-
-\code{n0} and \code{n1} numeric to specify the number of periods at the
+\item \code{n0} and \code{n1} numeric to specify the number of periods at the
 beginning/end of the series to be used for defining the sub-span
 (\code{type} equals to \code{"First"}, \code{"Last"}) or to exclude
-(\code{type} equals to \code{"Excluding"}).}
+(\code{type} equals to \code{"Excluding"}).
+}}
 
 \item{tol}{a numeric, convergence tolerance. The absolute changes in the
 log-likelihood function are compared to this value to check for the

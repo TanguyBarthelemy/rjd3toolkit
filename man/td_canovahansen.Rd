@@ -19,10 +19,12 @@ test.}
 
 \item{kernel}{Kernel used to compute the robust covariance matrix.}
 
-\item{order}{The truncation parameter used to compute the robust covariance matrix.}
+\item{order}{The truncation parameter used to compute the robust covariance
+matrix.}
 }
 \value{
-list with the ftest on td, the joint test and the details for the stability of the different days (starting with Mondays).
+list with the ftest on td, the joint test and the details for the
+stability of the different days (starting with Mondays).
 }
 \description{
 Canova-Hansen test for stable trading days

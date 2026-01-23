@@ -22,9 +22,11 @@ seasonality_canovahansen_trigs(
 
 \item{kernel}{Kernel used to compute the robust Newey-West covariance matrix.}
 
-\item{order}{The truncation parameter used to compute the robust Newey-West covariance matrix.}
+\item{order}{The truncation parameter used to compute the robust Newey-West
+covariance matrix.}
 
-\item{original}{\code{TRUE} for original algorithm, \code{FALSE} for solution proposed by T. Proietti (based on Ox code).}
+\item{original}{\code{TRUE} for original algorithm, \code{FALSE} for solution proposed
+by T. Proietti (based on Ox code).}
 }
 \value{
 a numeric vector

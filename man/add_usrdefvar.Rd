@@ -54,12 +54,12 @@ generated with \code{rjd3x13::x13_spec()} (or "JD3_REGARIMA_SPEC" generated
 with \code{rjd3x13::spec_regarima()} or "JD3_TRAMOSEATS_SPEC" generated with
 \code{rjd3tramoseats::spec_tramoseats()} or "JD3_TRAMO_SPEC" generated with
 \code{rjd3tramoseats::spec_tramo()}).
+
 Components to which the effect of the regressor can be allocated:
 \itemize{
-\item \code{"Undefined"} : the effect of the regressor is assigned to an
+\item \code{"Undefined"}: the effect of the regressor is assigned to an
 additional component, the variable is used to improve the pre-processing
 step, but is not removed from the series for the decomposition.
-\itemize{
 \item \code{"Trend"}: after the decomposition the effect is allocated to
 the trend component, like a Level-Shift
 \item \code{"Irregular"}: after the decomposition the effect is allocated
@@ -70,7 +70,6 @@ to the seasonal component, like a Seasonal-outlier
 the raw series: \eqn{yc_t=y_t+ effect}
 \item \code{"SeasonallyAdjusted"}: after the decomposition the effect is
 allocated to the seasonally adjusted series: \eqn{sa_t=T+I+effect}
-}
 }
 }
 \examples{

@@ -25,12 +25,14 @@ seasonality_canovahansen(
 
 \item{kernel}{Kernel used to compute the robust Newey-West covariance matrix.}
 
-\item{order}{The truncation parameter used to compute the robust Newey-West covariance matrix.}
+\item{order}{The truncation parameter used to compute the robust Newey-West
+covariance matrix.}
 
 \item{start}{Position of the first observation of the series}
 }
 \value{
-list with the FTest on seasonal variables, the joint test and the details for the stability of the different seasonal variables
+list with the FTest on seasonal variables, the joint test and the
+details for the stability of the different seasonal variables.
 }
 \description{
 Canova-Hansen seasonality test

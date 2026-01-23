@@ -20,16 +20,19 @@ seasonality_combined(
 For example, for a monthly, \code{firstperiod = 1} means January.
 If \code{data} is not a \code{"ts"} object, \code{firstperiod = 1} by default.}
 
-\item{mul}{boolean indicating if the seasonal decomposition is multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).}
+\item{mul}{boolean indicating if the seasonal decomposition is
+multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).}
 }
 \value{
-a \code{list} with several seasonnality tests (kruskalwallis, stable and evolutive)
+a \code{list} with several seasonnality tests (kruskalwallis,
+stable and evolutive)
 }
 \description{
 "X12" Test On Seasonality
 }
 \details{
-Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
+Combined test on the presence of identifiable seasonality (see
+Ladiray and Quenneville, 1999).
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}

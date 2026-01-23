@@ -18,13 +18,15 @@ in periods (positive value) or years (negative values).
 By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-A \code{c("JD3_TEST", "JD3")} object (see \code{\link[=statisticaltest]{statisticaltest()}} for details).
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[=statisticaltest]{statisticaltest()}} for
+details).
 }
 \description{
 F-test on seasonal dummies
 }
 \details{
-Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
+Estimation of a model with seasonal dummies. Joint F-test on the
+coefficients of the dummies.
 }
 \examples{
 \dontshow{if (current_java_version >= minimal_java_version) withAutoprint(\{ # examplesIf}
