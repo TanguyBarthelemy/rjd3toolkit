@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `rjd3toolkit` <a href="https://rjdverse.github.io/rjd3toolkit/"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;"/></a>
+# {rjd3toolkit} <a href="https://rjdverse.github.io/rjd3toolkit/"><img src="man/figures/logo.png" align="right" height="150" style="float:right; height:150px;"/></a>
 
 <!-- badges: start -->
 
@@ -23,16 +23,11 @@ using any other rjd3 package.
 
 ## Main Functions
 
-- customize specifications in rjd3x13 and rjd3tramoseats
-
+- customize specifications in {rjd3x13} and {rjd3tramoseats}
 - generate user-defined regressors for calendar correction
-
 - generate auxiliary variables (outliers, ramps..)
-
 - run arima model estimations
-
 - perform tests (seasonality, normality, independence)
-
 - access general functions such as auto-correlations, distributions
 
 ## Installation
@@ -60,7 +55,7 @@ install.packages("rjd3toolkit", repos = c("https://rjdverse.r-universe.dev", "ht
 
 ### Development version
 
-You can install the development version of **rjd3toolkit** from
+You can install the development version of **{rjd3toolkit}** from
 [GitHub](https://github.com/) with:
 
 ``` r
