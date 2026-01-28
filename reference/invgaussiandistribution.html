@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rjd3toolkit</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-jdemetra-"><li><a class="external-link dropdown-item" href="https://github.com/jdemetra/jdemetra-app/releases">Download JDemetra+</a></li>
     <li><a class="external-link dropdown-item" href="https://jdemetra-new-documentation.netlify.app/">JDemetra+ documentation</a></li>
   </ul></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/rjdverse/rjd3toolkit"><span class="fa fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/rjdverse/rjd3toolkit" aria-label="GitHub"><span class="fa fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -74,6 +74,8 @@
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>numeric vector</p>
+<p>The functions density_XXX and cdf_t return numeric vectors of same length as <code>x</code>.
+The functions random_XXX return random number (numeric vectors) of length <code>n</code>.</p>
     </div>
 
     <div class="section level2">
@@ -82,8 +84,8 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 5.641896e-01 1.209854e-01 2.862094e-02 7.433143e-03 2.056969e-03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [6] 5.951656e-04 1.779359e-04 5.454267e-05 1.705081e-05 5.415515e-06</span>
 <span class="r-in"><span><span class="fu">random_inverse_gaussian</span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">1</span>, scale <span class="op">=</span> <span class="fl">2</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 2.9692482 1.1258224 0.6910208 0.5673259 0.8321772 1.0100840 1.1010037</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 0.5375020 0.4463052 0.2736683</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 1.0062530 1.0140577 2.9736445 0.7460687 0.8305217 1.8338388 0.2942033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 2.3433279 0.9955649 1.5662118</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

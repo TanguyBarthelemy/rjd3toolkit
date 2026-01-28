@@ -45,8 +45,8 @@ for details).
 x <- random_t(5, 1000)
 # random values
 testofruns(x)
-#> Value: 1.298315 
-#> P-Value: 0.1942 
+#> Value: 0.3859403 
+#> P-Value: 0.6995 
 testofupdownruns(x)
 #> Value: 0.2001815 
 #> P-Value: 0.8413 

@@ -31,6 +31,10 @@ random_chi2(df, n)
 
 numeric vector
 
+The functions density_XXX and cdf_t return numeric vectors of same
+length as `x`. The functions random_XXX return random number (numeric
+vectors) of length `n`.
+
 ## Examples
 
 ``` r
@@ -41,6 +45,6 @@ cdf_chi2(df = 3, 1:10)
 #>  [1] 0.1987480 0.4275933 0.6083748 0.7385359 0.8282029 0.8883898 0.9281022
 #>  [8] 0.9539883 0.9707091 0.9814339
 random_chi2(df = 3, n = 10)
-#>  [1] 0.8547752 5.3798471 6.2472863 0.7546946 2.3211967 1.1805237 4.0765916
-#>  [8] 2.0834813 0.7318806 2.6241405
+#>  [1] 1.369871 2.563431 3.754221 1.192588 8.074673 1.052806 7.534166 1.383611
+#>  [9] 5.155195 4.289427
 ```
