@@ -81,11 +81,9 @@ The functions random_XXX return random number (numeric vectors) of length <code>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">density_inverse_gaussian</span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">1</span>, scale <span class="op">=</span> <span class="fl">2</span>, x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 5.641896e-01 1.209854e-01 2.862094e-02 7.433143e-03 2.056969e-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] 5.951656e-04 1.779359e-04 5.454267e-05 1.705081e-05 5.415515e-06</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityInverseGaussian",     shape, scale, .jarray(as.numeric(x))):</span> java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0</span>
 <span class="r-in"><span><span class="fu">random_inverse_gaussian</span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">1</span>, scale <span class="op">=</span> <span class="fl">2</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 2.2694316 0.3654894 4.4802699 1.3752811 1.7301353 0.8944295 1.0111699</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] 0.5955668 1.0599734 1.7589364</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsInverseGaussian",     shape, scale, as.integer(n)):</span> RcallMethod: cannot determine object class</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

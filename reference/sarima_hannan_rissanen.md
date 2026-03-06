@@ -55,4 +55,5 @@ An object of class `JD3_SARIMA` with the estimated coefficient.
 ``` r
 y <- ABS$X0.2.09.10.M
 model<- sarima_hannan_rissanen(y, order = c(0, 1, 1), seasonal = c(0, 1, 1))
+#> Error in .jcall("jdplus/toolkit/base/r/arima/SarimaModels", "Ljdplus/toolkit/base/core/sarima/SarimaModel;",     "hannanRissanen", as.numeric(x), as.integer(order), as.integer(seasonal$period),     as.integer(seasonal$order), as.character(initialization),     as.logical(biasCorrection), as.logical(finalCorrection)): RcallMethod: cannot determine object class
 ```

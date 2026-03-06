@@ -57,19 +57,7 @@ documentation:
 ``` r
 # Leap years occur in year 2000, 2004, 2008 and 2012
 lp_variable(4, start = c(2000, 1), length = 4 * 13)
-#>       Qtr1  Qtr2  Qtr3  Qtr4
-#> 2000  0.75  0.00  0.00  0.00
-#> 2001 -0.25  0.00  0.00  0.00
-#> 2002 -0.25  0.00  0.00  0.00
-#> 2003 -0.25  0.00  0.00  0.00
-#> 2004  0.75  0.00  0.00  0.00
-#> 2005 -0.25  0.00  0.00  0.00
-#> 2006 -0.25  0.00  0.00  0.00
-#> 2007 -0.25  0.00  0.00  0.00
-#> 2008  0.75  0.00  0.00  0.00
-#> 2009 -0.25  0.00  0.00  0.00
-#> 2010 -0.25  0.00  0.00  0.00
-#> 2011 -0.25  0.00  0.00  0.00
-#> 2012  0.75  0.00  0.00  0.00
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
 lper <- lp_variable(12, c(2000, 1), length = 10 * 12, type = "LengthOfPeriod")
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

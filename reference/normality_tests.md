@@ -54,35 +54,26 @@ for details).
 ``` r
 x <- rnorm(100) # null
 bowmanshenton(x)
-#> Value: 3.478603 
-#> P-Value: 0.1756 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "bowmanShenton", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/math/CubicSplines has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 doornikhansen(x)
-#> Value: 3.677657 
-#> P-Value: 0.1590 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "doornikHansen", as.numeric(data)): RcallMethod: cannot determine object class
 jarquebera(x)
-#> Value: 3.679651 
-#> P-Value: 0.1588 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "jarqueBera", as.numeric(data), as.integer(k), as.logical(sample)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 skewness(x)
-#> Value: 0.4520879 
-#> P-Value: 0.0649 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "skewness", as.numeric(data)): RcallMethod: cannot determine object class
 kurtosis(x)
-#> Value: 3.131647 
-#> P-Value: 0.7881 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "kurtosis", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 
 x <- random_t(2, 100) # alternative
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): RcallMethod: cannot determine object class
 bowmanshenton(x)
-#> Value: 131.5738 
-#> P-Value: 0.0000 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "bowmanShenton", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 doornikhansen(x)
-#> Value: 49.14602 
-#> P-Value: 0.0000 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "doornikHansen", as.numeric(data)): RcallMethod: cannot determine object class
 jarquebera(x)
-#> Value: 147.8668 
-#> P-Value: 0.0000 
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "jarqueBera", as.numeric(data), as.integer(k), as.logical(sample)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 skewness(x)
-#> Value: -0.7417558 
-#> P-Value: 0.0025 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "skewness", as.numeric(data)): RcallMethod: cannot determine object class
 kurtosis(x)
-#> Value: 8.420046 
-#> P-Value: 0.0000 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "kurtosis", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

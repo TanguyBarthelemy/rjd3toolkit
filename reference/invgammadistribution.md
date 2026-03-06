@@ -39,12 +39,9 @@ vectors) of length `n`.
 
 ``` r
 density_inverse_gamma(shape = 1, scale = 2, x = 1:10)
-#>  [1] 0.27067057 0.18393972 0.11409269 0.07581633 0.05362560 0.03980730
-#>  [7] 0.03067254 0.02433752 0.01977129 0.01637462
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityInverseGamma",     shape, scale, .jarray(as.numeric(x))): RcallMethod: cannot determine object class
 cdf_inverse_gamma(shape = 1, scale = 2, x = 1:10)
-#>  [1] 0.1353353 0.3678794 0.5134171 0.6065307 0.6703200 0.7165313 0.7514773
-#>  [8] 0.7788008 0.8007374 0.8187308
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "cdfInverseGamma",     shape, scale, .jarray(as.numeric(x))): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 random_inverse_gamma(shape = 1, scale = 2, n = 10)
-#>  [1]  0.5290989  7.2318347  1.6538770  0.4111883  6.1638223  1.7970797
-#>  [7]  1.4097904 40.6400286  8.2916200  2.1510652
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsInverseGamma",     shape, scale, as.integer(n)): RcallMethod: cannot determine object class
 ```

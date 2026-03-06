@@ -30,5 +30,5 @@ s1<- rjd3toolkit::ABS$X0.2.09.10.M
 # two raw series for example's sake
 s2 <- rjd3toolkit::ABS$X0.2.08.10.M
 compare_annual_totals(s1,s2)
-#> [1] 0.8146783
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.integer(freq), as.integer(start[1]), as.integer(start[2]),     as.double(s)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

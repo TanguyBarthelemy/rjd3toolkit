@@ -48,92 +48,9 @@ and Quenneville, 1999).
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "Ljdplus/toolkit/base/core/modelling/StationaryTransformation;",     "doStationary", as.numeric(data), as.integer(period)): RcallMethod: cannot determine object class
 seasonality_combined(s)
-#> $seasonality
-#> [1] "PRESENT"
-#> 
-#> $kruskalwallis
-#> Value: 333.9183 
-#> P-Value: 0.0000 
-#> 
-#> $stable
-#> $stable$SSM
-#> [1] 33.26444
-#> 
-#> $stable$dfM
-#> [1] 11
-#> 
-#> $stable$SSR
-#> [1] 2.0756
-#> 
-#> $stable$dfR
-#> [1] 412
-#> 
-#> $stable$test
-#> Value: 600.2623 
-#> P-Value: 0.0000 
-#> 
-#> 
-#> $evolutive
-#> $evolutive$SSM
-#> [1] 0.004203856
-#> 
-#> $evolutive$dfM
-#> [1] 33
-#> 
-#> $evolutive$SSR
-#> [1] 2.008952
-#> 
-#> $evolutive$dfR
-#> [1] 363
-#> 
-#> $evolutive$test
-#> Value: 0.02301817 
-#> P-Value: 1.0000 
-#> 
-#> 
+#> Error: object 's' not found
 seasonality_combined(random_t(2, 1000), 7)
-#> $seasonality
-#> [1] "NONE"
-#> 
-#> $kruskalwallis
-#> Value: 3.219269 
-#> P-Value: 0.7809 
-#> 
-#> $stable
-#> $stable$SSM
-#> [1] 30.93316
-#> 
-#> $stable$dfM
-#> [1] 6
-#> 
-#> $stable$SSR
-#> [1] 5971.518
-#> 
-#> $stable$dfR
-#> [1] 993
-#> 
-#> $stable$test
-#> Value: 0.8573094 
-#> P-Value: 0.5259 
-#> 
-#> 
-#> $evolutive
-#> $evolutive$SSM
-#> [1] 537.5552
-#> 
-#> $evolutive$dfM
-#> [1] 141
-#> 
-#> $evolutive$SSR
-#> [1] 3440.885
-#> 
-#> $evolutive$dfR
-#> [1] 846
-#> 
-#> $evolutive$test
-#> Value: 0.9373551 
-#> P-Value: 0.6801 
-#> 
-#> 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/modelling/Differencing has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

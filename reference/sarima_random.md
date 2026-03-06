@@ -45,5 +45,7 @@ a numeric vector with the simulated series.
 # Airline model
 s_model <- sarima_model(period = 12, d = 1, bd = 1, theta = 0.2, btheta = 0.2)
 x <- sarima_random(s_model, length = 64, seed = 0)
+#> Error in .jcall("jdplus/toolkit/base/r/arima/SarimaModels", "[D", "random",     as.integer(length), as.integer(model$period), .jarray(as.numeric(model$phi)),     as.integer(model$d), .jarray(as.numeric(model$theta)), .jarray(as.numeric(model$bphi)),     as.integer(model$bd), .jarray(as.numeric(model$btheta)),     stde, as.integer(tdegree), as.integer(seed)): RcallMethod: cannot determine object class
 plot(x, type = "l")
+#> Error: object 'x' not found
 ```

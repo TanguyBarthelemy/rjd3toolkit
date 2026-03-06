@@ -35,5 +35,7 @@ A matrix (len(pos) x len(knots))
 
 ``` r
 s<-periodic_bsplines(knots = c(0,.2,.3, .9,.95), pos=seq(0,1,0.01))
+#> Error in .jcall("jdplus/toolkit/base/r/math/BSplines", "Ljdplus/toolkit/base/api/math/matrices/Matrix;",     "periodic", as.integer(order), as.numeric(period), .jarray(as.numeric(knots)),     .jarray(as.numeric(pos))): RcallMethod: cannot determine object class
 matplot(s, type='l')
+#> Error: object 's' not found
 ```

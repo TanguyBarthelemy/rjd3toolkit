@@ -39,9 +39,7 @@ vectors) of length `n`.
 
 ``` r
 density_inverse_gaussian(shape = 1, scale = 2, x = 1:10)
-#>  [1] 5.641896e-01 1.209854e-01 2.862094e-02 7.433143e-03 2.056969e-03
-#>  [6] 5.951656e-04 1.779359e-04 5.454267e-05 1.705081e-05 5.415515e-06
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityInverseGaussian",     shape, scale, .jarray(as.numeric(x))): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 random_inverse_gaussian(shape = 1, scale = 2, n = 10)
-#>  [1] 2.2694316 0.3654894 4.4802699 1.3752811 1.7301353 0.8944295 1.0111699
-#>  [8] 0.5955668 1.0599734 1.7589364
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsInverseGaussian",     shape, scale, as.integer(n)): RcallMethod: cannot determine object class
 ```

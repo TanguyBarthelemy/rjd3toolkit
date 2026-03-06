@@ -70,19 +70,21 @@ plot(y)
 
 period <- 12
 rm_t <- rangemean_tstat(y, period = period, groupsize = period)
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/AutoModelling", "D",     "rangeMean", as.numeric(data), as.integer(period), as.integer(groupsize),     as.integer(trim)): RcallMethod: cannot determine object class
 rm_t # higher than 0
-#> [1] 32.41607
+#> Error: object 'rm_t' not found
 # Can be tested:
 pt(rm_t, period - 2, lower.tail = FALSE)
-#> [1] 9.196296e-12
+#> Error: object 'rm_t' not found
 # Or :
 1 - cdf_t(period - 2, rm_t)
-#> [1] 9.19631e-12
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "cdfT",     df, .jarray(as.numeric(x))): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/modelling/AutoModelling has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 
 # Close to 0
 rm_t_log <- rangemean_tstat(log(y), period = period, groupsize = period)
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/AutoModelling", "D",     "rangeMean", as.numeric(data), as.integer(period), as.integer(groupsize),     as.integer(trim)): RcallMethod: cannot determine object class
 rm_t_log
-#> [1] 0.5946804
+#> Error: object 'rm_t_log' not found
 pt(rm_t_log, period - 2, lower.tail = FALSE)
-#> [1] 0.2826345
+#> Error: object 'rm_t_log' not found
 ```

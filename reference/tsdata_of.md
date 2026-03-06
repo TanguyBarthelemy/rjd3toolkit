@@ -31,7 +31,9 @@ contain missing values (NA)
 # Annual series
 s <- tsdata_of(c(1, 2, 3, 4), c("1990-01-01", "1995-01-01", "1996-01-01",
         "2000-11-01"))
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsDataCollector", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.numeric(values), as.character(dates)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 # Quarterly series
 t <- tsdata_of(c(1, 2, 3, NA, 4), c("1990-01-01", "1995-01-01", "1996-01-01",
         "2000-08-01", "2000-11-01"))
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsDataCollector", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.numeric(values), as.character(dates)): RcallMethod: cannot determine object class
 ```

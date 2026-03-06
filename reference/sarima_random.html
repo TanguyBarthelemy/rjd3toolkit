@@ -88,8 +88,9 @@ random seeds.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Airline model</span></span></span>
 <span class="r-in"><span><span class="va">s_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="sarima_model.html">sarima_model</a></span><span class="op">(</span>period <span class="op">=</span> <span class="fl">12</span>, d <span class="op">=</span> <span class="fl">1</span>, bd <span class="op">=</span> <span class="fl">1</span>, theta <span class="op">=</span> <span class="fl">0.2</span>, btheta <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">sarima_random</span><span class="op">(</span><span class="va">s_model</span>, length <span class="op">=</span> <span class="fl">64</span>, seed <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/arima/SarimaModels", "[D", "random",     as.integer(length), as.integer(model$period), .jarray(as.numeric(model$phi)),     as.integer(model$d), .jarray(as.numeric(model$theta)), .jarray(as.numeric(model$bphi)),     as.integer(model$bd), .jarray(as.numeric(model$btheta)),     stde, as.integer(tdegree), as.integer(seed)):</span> RcallMethod: cannot determine object class</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span>, type <span class="op">=</span> <span class="st">"l"</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="sarima_random-1.png" alt="" width="700" height="433"></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'x' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

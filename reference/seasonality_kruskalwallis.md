@@ -38,10 +38,9 @@ Non parametric test on the ranks.
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "Ljdplus/toolkit/base/core/modelling/StationaryTransformation;",     "doStationary", as.numeric(data), as.integer(period)): RcallMethod: cannot determine object class
 seasonality_kruskalwallis(s)
-#> Value: 333.9183 
-#> P-Value: 0.0000 
+#> Error: object 's' not found
 seasonality_kruskalwallis(random_t(2, 1000), 7)
-#> Value: 3.70657 
-#> P-Value: 0.7163 
+#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/modelling/Differencing has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

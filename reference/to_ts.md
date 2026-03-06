@@ -38,25 +38,5 @@ id2 <- "file=C%3A%5CDocuments%5CIPI%5CData%5CIPI_nace4.csv#seriesIndex=0"
 id <- paste0(id1, id2)
 
 to_ts(source, id)
-#> $name
-#> [1] ""
-#> 
-#> $moniker
-#> $source
-#> [1] "Txt"
-#> 
-#> $id
-#> [1] "demetra://tsprovider/Txt/20111201/SERIES?datePattern=dd%2FMM%2Fyyyy&delimiter=SEMICOLON&file=C%3A%5CDocuments%5CIPI%5CData%5CIPI_nace4.csv#seriesIndex=0"
-#> 
-#> attr(,"class")
-#> [1] "JD3_TSMONIKER"
-#> 
-#> $metadata
-#> NULL
-#> 
-#> $data
-#> NULL
-#> 
-#> attr(,"class")
-#> [1] "JD3_TS"
+#> Error in .jcall(obj = "jdplus/toolkit/base/api/timeseries/TsMoniker",     returnSig = "Ljdplus/toolkit/base/api/timeseries/TsMoniker;",     method = "of", source, id): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

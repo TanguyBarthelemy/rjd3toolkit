@@ -43,17 +43,10 @@ periodic_dummies but adds -1 to the period preceding a 1.
 ``` r
 # periodic dummies for a quarterly series
 p <- periodic_dummies(4, c(2000, 1), 60)
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/math/CubicSplines has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 # periodic contrasts for a quarterly series
 q <- periodic_contrasts(4, c(2000, 1), 60)
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
 q[1:9, ]
-#>       Series 1 Series 2 Series 3
-#>  [1,]        1        0        0
-#>  [2,]        0        1        0
-#>  [3,]        0        0        1
-#>  [4,]       -1       -1       -1
-#>  [5,]        1        0        0
-#>  [6,]        0        1        0
-#>  [7,]        0        0        1
-#>  [8,]       -1       -1       -1
-#>  [9,]        1        0        0
+#> Error in q[1:9, ]: object of type 'closure' is not subsettable
 ```

@@ -71,4 +71,5 @@ lt <- long_term_mean(BE, 12,
     groups = c(1, 1, 1, 1, 1, 0, 0),
     holiday = 7
 )
+#> Error in .jcall("jdplus/toolkit/base/r/calendar/Calendars", "Ljdplus/toolkit/base/api/timeseries/calendars/Calendar;",     "calendarOf", bytes): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 ```

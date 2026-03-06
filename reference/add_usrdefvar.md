@@ -115,6 +115,7 @@ iv1 <- intervention_variable(
     starts = "2001-01-01",
     ends = "2001-12-01"
 )
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
 iv2 <- intervention_variable(
     frequency = 12,
     start = c(2000, 1),
@@ -123,6 +124,7 @@ iv2 <- intervention_variable(
     ends = "2001-12-01",
     delta = 1
 )
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 
 # Using one variable in a a seasonal adjustment process
 # Regressors as a list of two groups reg1 and reg2
@@ -130,9 +132,11 @@ vars <- list(
     reg1 = list(x = iv1),
     reg2 = list(x = iv2)
 )
+#> Error: object 'iv1' not found
 
 # Creating the modelling context
 my_context <- modelling_context(variables = vars)
+#> Error: object 'vars' not found
 
 # Customize a default specification
 init_spec <- x13_spec_default

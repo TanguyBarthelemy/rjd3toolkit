@@ -71,11 +71,16 @@ defined as (if `zeroended = TRUE`): \$\$SO_t = \begin{cases} 0 &\text{if
 ``` r
 # Outliers in February 2002
 ao <- ao_variable(12, c(2000, 1), length = 12 * 4, date = "2002-02-01")
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
 ls <- ls_variable(12, c(2000, 1), length = 12 * 4, date = "2002-02-01")
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 tc <- tc_variable(12, c(2000, 1), length = 12 * 4, date = "2002-02-01")
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
 so <- so_variable(12, c(2000, 1), length = 12 * 4, date = "2002-02-01")
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 plot.ts(ts.union(ao, ls, tc, so),
     plot.type = "single",
     col = c("black", "orange", "green", "gray")
 )
+#> Error: object 'ao' not found
 ```

@@ -34,6 +34,5 @@ A Chi2 test
 ``` r
 s <- log(ABS$X0.2.20.10.M)
 td_timevarying(s)
-#> Value: 75.04509 
-#> P-Value: 0.0000 
+#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.integer(freq), as.integer(start[1]), as.integer(start[2]),     as.double(s)): RcallMethod: cannot determine object class
 ```
