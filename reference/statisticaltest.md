@@ -43,11 +43,13 @@ print(x, details = FALSE, ...)
 
 ``` r
 udr_test <- testofupdownruns(random_t(5, 1000))
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): RcallMethod: cannot determine object class
 udr_test # default print
-#> Error: object 'udr_test' not found
+#> Value: 0.800726 
+#> P-Value: 0.4233 
 print(udr_test, details = TRUE) # with the distribution
-#> Error: object 'udr_test' not found
+#> Value: 0.800726 
+#> P-Value: 0.4233 
+#> [ Normal with Mean = 0.0 and Stdev = 1.0 ]
 
 test <- statisticaltest(val = 45, pval = 0.1)
 print(test)

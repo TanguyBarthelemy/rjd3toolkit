@@ -34,13 +34,12 @@ deviations if stdev is TRUE.
 mod1 <- arima_model("trend", delta = c(1, -2, 1))
 mod2 <- arima_model("noise", variance = 16)
 hp <- ucarima_model(components = list(mod1, mod2))
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/arima/ArimaModels", returnSig = "Ljdplus/toolkit/base/core/arima/ArimaModel;",     method = "of", .jarray(as.numeric(model$ar)), .jarray(as.numeric(model$delta)),     .jarray(as.numeric(model$ma)), as.numeric(model$var), FALSE): RcallMethod: cannot determine object class
+#> Error in .jcall("jdplus/toolkit/base/r/arima/ArimaModels", "[B", "toBuffer",     jarima): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$ArimaModel
 s <- log(aggregate(Retail$AutomobileDealers))
-#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.integer(freq), as.integer(start[1]), as.integer(start[2]),     as.double(s)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/arima/ArimaModels has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 all <- ucarima_estimate(s, hp, stdev = TRUE)
 #> Error: object 'hp' not found
 plot(s, type = "l")
-#> Error: object 's' not found
+
 t <- ts(all[, 1], frequency = frequency(s), start = start(s))
 #> Error in all[, 1]: object of type 'builtin' is not subsettable
 lines(t, col = "blue")

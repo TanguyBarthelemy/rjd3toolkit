@@ -35,5 +35,5 @@ polynomial and innovation variance of the sum.
 mod1 <- arima_model(ar = c(0.1, 0.2), delta = 0, ma = 0)
 mod2 <- arima_model(ar = 0, delta = 0, ma = c(0.4))
 arima_sum(mod1, mod2)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/arima/ArimaModels", returnSig = "Ljdplus/toolkit/base/core/arima/ArimaModel;",     method = "of", .jarray(as.numeric(model$ar)), .jarray(as.numeric(model$delta)),     .jarray(as.numeric(model$ma)), as.numeric(model$var), FALSE): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/arima/ArimaModels has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Error in .jcall("jdplus/toolkit/base/r/arima/ArimaModels", "[B", "toBuffer",     jarima): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$ArimaModel
 ```

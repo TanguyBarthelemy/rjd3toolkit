@@ -39,9 +39,12 @@ vectors) of length `n`.
 
 ``` r
 density_gamma(shape = 1, scale = 2, x = 1:10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityGamma",     shape, scale, .jarray(as.numeric(x))): RcallMethod: cannot determine object class
+#>  [1] 0.303265330 0.183939721 0.111565080 0.067667642 0.041042499 0.024893534
+#>  [7] 0.015098692 0.009157819 0.005554498 0.003368973
 cdf_gamma(shape = 1, scale = 2, x = 1:10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "cdfGamma",     shape, scale, .jarray(as.numeric(x))): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#>  [1] 0.3934693 0.6321206 0.7768698 0.8646647 0.9179150 0.9502129 0.9698026
+#>  [8] 0.9816844 0.9888910 0.9932621
 random_gamma(shape = 1, scale = 2, n = 10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsGamma",     shape, scale, as.integer(n)): RcallMethod: cannot determine object class
+#>  [1] 0.4045970 4.8249945 1.0336620 0.3658868 0.1531331 1.3862008 1.7809973
+#>  [8] 3.7380645 0.5561317 2.4004278
 ```

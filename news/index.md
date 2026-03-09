@@ -1,8 +1,6 @@
 # Changelog
 
-## rjd3toolkit 3.6.0
-
-CRAN release: 2026-01-13
+## rjd3toolkit 3.6.0.9000
 
 All notable changes to this project will be documented in this file.
 
@@ -22,7 +20,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - default group value with mts objects in modelling_context
   [\#107](https://github.com/rjdverse/rjd3toolkit/issues/107)
-- Examples are executed only if Java version \>= 17
+- Examples are executed only if Java version \>= 21
 
 #### Removed
 

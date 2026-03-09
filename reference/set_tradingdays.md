@@ -233,7 +233,6 @@ regs_td <- rjd3toolkit::td(
     groups = c(1, 2, 0, 4, 5, 6, 3),
     contrasts = TRUE
 )
-#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
 
 variables <- list(
     Monday = regs_td[, 1],
@@ -243,10 +242,8 @@ variables <- list(
     Friday = regs_td[, 5],
     Saturday = regs_td[, 6]
 )
-#> Error: object 'regs_td' not found
 # Add regressors to context
 my_context <- modelling_context(variables = variables)
-#> Error: object 'variables' not found
 
 # Create a new spec (here default group name: r)
 new_spec <- set_tradingdays(

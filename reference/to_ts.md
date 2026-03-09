@@ -38,5 +38,5 @@ id2 <- "file=C%3A%5CDocuments%5CIPI%5CData%5CIPI_nace4.csv#seriesIndex=0"
 id <- paste0(id1, id2)
 
 to_ts(source, id)
-#> Error in .jcall(obj = "jdplus/toolkit/base/api/timeseries/TsMoniker",     returnSig = "Ljdplus/toolkit/base/api/timeseries/TsMoniker;",     method = "of", source, id): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/timeseries/TsUtility", returnSig = "[B",     method = "toBuffer", jts): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.toolkit.ToolkitProtos$Ts
 ```

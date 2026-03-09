@@ -97,7 +97,7 @@ BE <- national_calendar(list(
     special_day("ARMISTICE")
 ))
 q <- holidays(BE, "2021-01-01", 366 * 10, type = "All")
-#> Error in .jcall("jdplus/toolkit/base/r/calendar/Calendars", "Ljdplus/toolkit/base/api/timeseries/calendars/Calendar;",     "calendarOf", bytes): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Error in .jcall("jdplus/toolkit/base/r/calendar/Calendars", "Ljdplus/toolkit/base/api/timeseries/calendars/Calendar;",     "calendarOf", bytes): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.toolkit.ToolkitProtos$Calendar
 plot(apply(q, 1, max))
 #> Error in apply(q, 1, max): dim(X) must have a positive length
 ```

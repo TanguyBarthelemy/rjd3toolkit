@@ -71,5 +71,5 @@ An object of class `JD3_SARIMA_ESTIMATE` containing:
 ``` r
 y <- ABS$X0.2.09.10.M
 sarima_estimate(y, order = c(0, 1, 1), seasonal = c(0, 1, 1))
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/arima/SarimaModels", returnSig = "Ljdplus/toolkit/base/core/regarima/RegArimaEstimation;",     method = "estimate", as.numeric(x), as.integer(order), as.integer(seasonal$period),     as.integer(seasonal$order), as.logical(mean), jxreg, .jnull("[D"),     as.numeric(eps)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/arima/SarimaModels has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Error in .jcall(obj = "jdplus/toolkit/base/r/arima/SarimaModels", returnSig = "[B",     method = "toBuffer", jestim): java.lang.ExceptionInInitializerError
 ```

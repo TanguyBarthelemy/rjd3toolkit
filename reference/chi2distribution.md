@@ -39,9 +39,12 @@ vectors) of length `n`.
 
 ``` r
 density_chi2(df = 3, 1:10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "densityChi2",     df, .jarray(as.numeric(x))): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/timeseries/TsUtility has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#>  [1] 0.241970725 0.207553749 0.154180330 0.107981933 0.073224913 0.048652173
+#>  [7] 0.031873400 0.020666985 0.013295545 0.008500367
 cdf_chi2(df = 3, 1:10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "cdfChi2",     df, .jarray(as.numeric(x))): RcallMethod: cannot determine object class
+#>  [1] 0.1987480 0.4275933 0.6083748 0.7385359 0.8282029 0.8883898 0.9281022
+#>  [8] 0.9539883 0.9707091 0.9814339
 random_chi2(df = 3, n = 10)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsChi2",     df, as.integer(n)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#>  [1]  4.0378440  1.2671731  3.0279203  2.6717547  7.3562286  1.1641368
+#>  [7]  0.5383844  3.4096538 12.0011903  2.4703944
 ```

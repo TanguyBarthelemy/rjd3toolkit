@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rjd3toolkit</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,11 +82,12 @@ By default (<code>nyears = 0</code>), the entire sample is used.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">s</span> <span class="op">&lt;-</span> <span class="fu"><a href="do_stationary.html">do_stationary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="va">ABS</span><span class="op">$</span><span class="va">X0.2.09.10.M</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">ddata</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "Ljdplus/toolkit/base/core/modelling/StationaryTransformation;",     "doStationary", as.numeric(data), as.integer(period)):</span> java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "[B",     "toBuffer", jst):</span> java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation</span>
 <span class="r-in"><span><span class="fu">seasonality_qs</span><span class="op">(</span><span class="va">s</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 's' not found</span>
 <span class="r-in"><span><span class="fu">seasonality_qs</span><span class="op">(</span><span class="fu"><a href="studentdistribution.html">random_t</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">1000</span><span class="op">)</span>, <span class="fl">7</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)):</span> RcallMethod: cannot determine object class</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Value: 0 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> P-Value: 1.0000 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

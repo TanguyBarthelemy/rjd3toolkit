@@ -54,26 +54,35 @@ for details).
 ``` r
 x <- rnorm(100) # null
 bowmanshenton(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "bowmanShenton", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/math/CubicSplines has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 0.09858598 
+#> P-Value: 0.9519 
 doornikhansen(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "doornikHansen", as.numeric(data)): RcallMethod: cannot determine object class
+#> Value: 0.05114668 
+#> P-Value: 0.9748 
 jarquebera(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "jarqueBera", as.numeric(data), as.integer(k), as.logical(sample)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 0.04550024 
+#> P-Value: 0.9775 
 skewness(x)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "skewness", as.numeric(data)): RcallMethod: cannot determine object class
+#> Value: -0.02688914 
+#> P-Value: 0.9126 
 kurtosis(x)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "kurtosis", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 2.855887 
+#> P-Value: 0.7686 
 
 x <- random_t(2, 100) # alternative
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): RcallMethod: cannot determine object class
 bowmanshenton(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "bowmanShenton", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 258.2625 
+#> P-Value: 0.0000 
 doornikhansen(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "doornikHansen", as.numeric(data)): RcallMethod: cannot determine object class
+#> Value: 30.26063 
+#> P-Value: 0.0000 
 jarquebera(x)
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/stats/Tests", returnSig = "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     method = "jarqueBera", as.numeric(data), as.integer(k), as.logical(sample)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 286.3035 
+#> P-Value: 0.0000 
 skewness(x)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "skewness", as.numeric(data)): RcallMethod: cannot determine object class
+#> Value: -1.637724 
+#> P-Value: 0.0000 
 kurtosis(x)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "kurtosis", as.numeric(data)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 10.15922 
+#> P-Value: 0.0000 
 ```

@@ -43,15 +43,18 @@ for details).
 
 ``` r
 x <- random_t(5, 1000)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): RcallMethod: cannot determine object class
 # random values
 testofruns(x)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "testOfRuns", as.numeric(data), as.logical(mean), as.logical(number)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 0.4169136 
+#> P-Value: 0.6767 
 testofupdownruns(x)
-#> Error: object 'x' not found
+#> Value: 1.551407 
+#> P-Value: 0.1208 
 # non-random values
 testofruns(ABS$X0.2.09.10.M)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "testOfRuns", as.numeric(data), as.logical(mean), as.logical(number)): RcallMethod: cannot determine object class
+#> Value: -14.05884 
+#> P-Value: 0.0000 
 testofupdownruns(ABS$X0.2.09.10.M)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "testOfUpDownRuns", as.numeric(data), as.logical(number)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Tests has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: -10.0303 
+#> P-Value: 0.0000 
 ```

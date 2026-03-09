@@ -39,7 +39,7 @@ series. Not critical.
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "Ljdplus/toolkit/base/core/modelling/StationaryTransformation;",     "doStationary", as.numeric(data), as.integer(period)): RcallMethod: cannot determine object class
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "[B",     "toBuffer", jst): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_modified_qs(s)
 #> Error: object 's' not found
 ```

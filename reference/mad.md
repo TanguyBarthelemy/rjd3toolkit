@@ -33,5 +33,4 @@ The median absolute deviation
 ``` r
 y <- rnorm(1000)
 m <- rjd3toolkit::mad(y, centile = 70)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "D", "mad", as.numeric(data),     as.numeric(centile), as.logical(medianCorrected)): RcallMethod: cannot determine object class
 ```

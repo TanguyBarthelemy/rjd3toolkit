@@ -39,9 +39,10 @@ for details).
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "Ljdplus/toolkit/base/core/modelling/StationaryTransformation;",     "doStationary", as.numeric(data), as.integer(period)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "[B",     "toBuffer", jst): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_qs(s)
 #> Error: object 's' not found
 seasonality_qs(random_t(2, 1000), 7)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Distributions", "[D", "randomsT",     df, as.integer(n)): RcallMethod: cannot determine object class
+#> Value: 0 
+#> P-Value: 1.0000 
 ```

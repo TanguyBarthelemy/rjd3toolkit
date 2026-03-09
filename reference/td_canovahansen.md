@@ -41,5 +41,18 @@ stability of the different days (starting with Mondays).
 ``` r
 s <- log(ABS$X0.2.20.10.M)
 td_canovahansen(s, c(1, 12))
-#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsData;",     "of", as.integer(freq), as.integer(start[1]), as.integer(start[2]),     as.double(s)): RcallMethod: cannot determine object class
+#> $td
+#> $td$value
+#> [1] 21.31204
+#> 
+#> $td$pvalue
+#> [1] 9.130842e-22
+#> 
+#> 
+#> $joint
+#> [1] 2.522328
+#> 
+#> $details
+#> [1] 0.9437191 1.5160559 1.8346550 1.8401795 1.1661557 0.9028408 1.7277995
+#> 
 ```

@@ -48,7 +48,9 @@ for details).
 
 ``` r
 ljungbox(random_t(2, 100), lag = 24, k = 1)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "ljungBox", as.numeric(data), as.integer(k), as.integer(lag),     as.integer(nhp), as.integer(sign), as.logical(mean)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/stats/Distributions has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> Value: 0.02830277 
+#> P-Value: 0.8664 
 ljungbox(ABS$X0.2.09.10.M, lag = 24, k = 1)
-#> Error in .jcall("jdplus/toolkit/base/r/stats/Tests", "Ljdplus/toolkit/base/api/stats/StatisticalTest;",     "ljungBox", as.numeric(data), as.integer(k), as.integer(lag),     as.integer(nhp), as.integer(sign), as.logical(mean)): RcallMethod: cannot determine object class
+#> Value: 350.021 
+#> P-Value: 0.0000 
 ```

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rjd3toolkit</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.6.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +75,25 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">differences</span><span class="op">(</span><span class="va">Retail</span><span class="op">$</span><span class="va">BookStores</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">12</span><span class="op">)</span>, <span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "[D",     "differences", as.numeric(data), .jarray(as.integer(lags)),     mean):</span> RcallMethod: cannot determine object class</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1993            219  -45    8  -31   15   90 -123   28   49   29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1994 -111   65  -47   29   50   -8  -72  136 -153   -1   69   41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1995   63 -289  147   41    5  -43   42  -34    0  -54  131  -86</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1996   29  -36   37    6   -8  -45   11  136 -283  387 -308  170</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1997  -23 -169  120  -18   -2   16    7 -109  280 -267  151   22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1998 -346  453 -218    6    1   57  -47   43  -28  -64   27  116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1999 -114   51    6  -39  -10   59   13 -188  131   79  -38   17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2000 -207  266 -155   32  101 -124  -29  248 -224 -128  185 -128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2001  296 -284  154 -125   78  -17   13  267 -495  227   -3   66</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2002  260 -780  471   72  -73  -93  143 -118  160 -208   81   51</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2003   62 -184   18  165 -108  162 -189  295 -511  226  -38  211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2004 -163   48    7 -131   56   65   -3  -83   74   27   -7   54</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2005 -290  258   -1 -104   88  -94  154  -36 -165  109   65  -72</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2006   98 -228  111   23   67  -38 -191  165   77  -90   13 -117</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2007  234 -177   56    9    8  -50  197  -60 -266  214  -40  -49</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2008   73    4 -158  197 -127  -59   97  214 -405  204  -87  119</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2009   30 -148  192 -118   -1   81 -118   19  195 -289  116  -18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2010   81  -42   11  -83   78    2  -34 -110  177   20    3  -84</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

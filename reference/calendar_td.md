@@ -105,5 +105,5 @@ calendar_td(BE, 12, c(1980, 1), 240,
     holiday = 7, groups = c(1, 1, 1, 2, 2, 3, 0),
     contrasts = FALSE
 )
-#> Error in .jcall("jdplus/toolkit/base/r/timeseries/TsUtility", "Ljdplus/toolkit/base/api/timeseries/TsDomain;",     "of", as.integer(period), as.integer(startYear), as.integer(startPeriod),     as.integer(length)): RcallMethod: cannot determine object class
+#> Error in .jcall("jdplus/toolkit/base/r/calendar/Calendars", "Ljdplus/toolkit/base/api/timeseries/calendars/Calendar;",     "calendarOf", bytes): java.lang.ExceptionInInitializerError
 ```

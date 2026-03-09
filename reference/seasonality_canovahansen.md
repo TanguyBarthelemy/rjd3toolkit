@@ -57,7 +57,34 @@ details for the stability of the different seasonal variables
 ``` r
 s <- log(ABS$X0.2.20.10.M)
 seasonality_canovahansen(s, 12, type = "Contrast")
-#> Error in .jcall("jdplus/sa/base/r/SeasonalityTests", "[D", "canovaHansen",     as.numeric(data), as.integer(period), type, as.logical(lag1),     kernel, as.integer(order), as.integer(start - 1)): java.lang.UnsupportedClassVersionError: jdplus/toolkit/base/r/arima/SarimaModels has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 61.0
+#> $seasonality
+#> $seasonality$value
+#> [1] 792.4501
+#> 
+#> $seasonality$pvalue
+#> [1] 8.183367e-269
+#> 
+#> 
+#> $joint
+#> [1] 2.775692
+#> 
+#> $details
+#>  [1] 0.19827842 0.79054669 0.67577086 0.13224572 0.09191475 0.12770741
+#>  [7] 0.11695464 0.68944569 1.66909605 1.33869879 1.22087073 1.97065542
+#> 
 seasonality_canovahansen(s, 12, type = "Trigonometric")
-#> Error in .jcall("jdplus/sa/base/r/SeasonalityTests", "[D", "canovaHansen",     as.numeric(data), as.integer(period), type, as.logical(lag1),     kernel, as.integer(order), as.integer(start - 1)): RcallMethod: cannot determine object class
+#> $seasonality
+#> $seasonality$value
+#> [1] 792.4501
+#> 
+#> $seasonality$pvalue
+#> [1] 8.183367e-269
+#> 
+#> 
+#> $joint
+#> [1] 2.775692
+#> 
+#> $details
+#> [1] 0.5923512 1.8096344 1.4492822 0.9050069 2.0166651 0.9540823
+#> 
 ```

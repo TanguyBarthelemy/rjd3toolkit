@@ -39,7 +39,7 @@ A list with the reduced model, the components and their complements
 mod1 <- arima_model("trend", delta = c(1, -2, 1))
 mod2 <- arima_model("noise", variance = 1600)
 hp <- ucarima_model(components = list(mod1, mod2))
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/arima/ArimaModels", returnSig = "Ljdplus/toolkit/base/core/arima/ArimaModel;",     method = "of", .jarray(as.numeric(model$ar)), .jarray(as.numeric(model$delta)),     .jarray(as.numeric(model$ma)), as.numeric(model$var), FALSE): RcallMethod: cannot determine object class
+#> Error in .jcall("jdplus/toolkit/base/r/arima/ArimaModels", "[B", "toBuffer",     jarima): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$ArimaModel
 print(hp$model)
 #> Error: object 'hp' not found
 ```
