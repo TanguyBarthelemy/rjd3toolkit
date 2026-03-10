@@ -218,6 +218,8 @@ interact between R and Java objects.
 
 .r2jd_make_tscollection(source, id, type = "All")
 
+get_java_version()
+
 current_java_version
 
 minimal_java_version

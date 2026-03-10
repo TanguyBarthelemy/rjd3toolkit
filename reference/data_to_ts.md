@@ -27,5 +27,4 @@ Returns a java object of class JD3_TS
 ``` r
 s <- ABS$X0.2.09.10.M
 t <- data_to_ts(s, "test")
-#> Error in .jcall(obj = "jdplus/toolkit/base/r/timeseries/TsUtility", returnSig = "[B",     method = "toBuffer", jts): java.lang.ExceptionInInitializerError
 ```

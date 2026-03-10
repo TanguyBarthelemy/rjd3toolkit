@@ -71,5 +71,4 @@ lt <- long_term_mean(BE, 12,
     groups = c(1, 1, 1, 1, 1, 0, 0),
     holiday = 7
 )
-#> Error in .jcall("jdplus/toolkit/base/r/calendar/Calendars", "Ljdplus/toolkit/base/api/timeseries/calendars/Calendar;",     "calendarOf", bytes): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.toolkit.ToolkitProtos$Calendar
 ```

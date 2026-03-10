@@ -48,9 +48,92 @@ and Quenneville, 1999).
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcall("jdplus/toolkit/base/r/modelling/Differencing", "[B",     "toBuffer", jst): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_combined(s)
-#> Error: object 's' not found
+#> $seasonality
+#> [1] "PRESENT"
+#> 
+#> $kruskalwallis
+#> Value: 333.9183 
+#> P-Value: 0.0000 
+#> 
+#> $stable
+#> $stable$SSM
+#> [1] 33.26444
+#> 
+#> $stable$dfM
+#> [1] 11
+#> 
+#> $stable$SSR
+#> [1] 2.0756
+#> 
+#> $stable$dfR
+#> [1] 412
+#> 
+#> $stable$test
+#> Value: 600.2623 
+#> P-Value: 0.0000 
+#> 
+#> 
+#> $evolutive
+#> $evolutive$SSM
+#> [1] 0.004203856
+#> 
+#> $evolutive$dfM
+#> [1] 33
+#> 
+#> $evolutive$SSR
+#> [1] 2.008952
+#> 
+#> $evolutive$dfR
+#> [1] 363
+#> 
+#> $evolutive$test
+#> Value: 0.02301817 
+#> P-Value: 1.0000 
+#> 
+#> 
 seasonality_combined(random_t(2, 1000), 7)
-#> Error in .jcall("jdplus/sa/base/r/SeasonalityTests", "[B", "toBuffer",     jctest): java.lang.ExceptionInInitializerError
+#> $seasonality
+#> [1] "NONE"
+#> 
+#> $kruskalwallis
+#> Value: 6.936146 
+#> P-Value: 0.3268 
+#> 
+#> $stable
+#> $stable$SSM
+#> [1] 47.0309
+#> 
+#> $stable$dfM
+#> [1] 6
+#> 
+#> $stable$SSR
+#> [1] 10784.03
+#> 
+#> $stable$dfR
+#> [1] 993
+#> 
+#> $stable$test
+#> Value: 0.7217725 
+#> P-Value: 0.6321 
+#> 
+#> 
+#> $evolutive
+#> $evolutive$SSM
+#> [1] 1331.785
+#> 
+#> $evolutive$dfM
+#> [1] 141
+#> 
+#> $evolutive$SSR
+#> [1] 7232.589
+#> 
+#> $evolutive$dfR
+#> [1] 846
+#> 
+#> $evolutive$test
+#> Value: 1.10482 
+#> P-Value: 0.2078 
+#> 
+#> 
 ```
