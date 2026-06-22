@@ -38,10 +38,10 @@ Tests on the sum of a periodogram at seasonal frequencies.
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
+#> Error in .jcheck(): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_periodogram(s)
-#> Value: 598.6239 
-#> P-Value: 0.0000 
+#> Error: object 's' not found
 seasonality_periodogram(random_t(2, 1000), 7)
-#> Value: 1.51686 
-#> P-Value: 0.1693 
+#> Value: 2.06682 
+#> P-Value: 0.0546 
 ```
