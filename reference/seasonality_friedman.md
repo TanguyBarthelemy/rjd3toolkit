@@ -38,10 +38,10 @@ Non parametric test ("ANOVA"-type).
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcheck(): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_friedman(s)
-#> Error: object 's' not found
+#> Value: 301.0967 
+#> P-Value: 0.0000 
 seasonality_friedman(random_t(2, 1000), 12)
-#> Value: 13.97683 
-#> P-Value: 0.2343 
+#> Value: 18.17516 
+#> P-Value: 0.0776 
 ```

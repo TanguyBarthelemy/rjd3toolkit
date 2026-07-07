@@ -39,10 +39,10 @@ for details).
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcheck(): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_qs(s)
-#> Error: object 's' not found
+#> Value: 747.7281 
+#> P-Value: 0.0000 
 seasonality_qs(random_t(2, 1000), 7)
-#> Value: 0.02501313 
-#> P-Value: 0.9876 
+#> Value: 0 
+#> P-Value: 1.0000 
 ```

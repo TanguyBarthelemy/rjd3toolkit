@@ -38,10 +38,10 @@ Non parametric test on the ranks.
 
 ``` r
 s <- do_stationary(log(ABS$X0.2.09.10.M))$ddata
-#> Error in .jcheck(): java.lang.NoClassDefFoundError: Could not initialize class jdplus.toolkit.base.protobuf.modelling.ModellingProtos$StationaryTransformation
 seasonality_kruskalwallis(s)
-#> Error: object 's' not found
+#> Value: 333.9183 
+#> P-Value: 0.0000 
 seasonality_kruskalwallis(random_t(2, 1000), 7)
-#> Value: 7.72982 
-#> P-Value: 0.2586 
+#> Value: 10.30537 
+#> P-Value: 0.1124 
 ```
