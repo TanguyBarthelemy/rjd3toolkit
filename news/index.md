@@ -1,6 +1,6 @@
 # Changelog
 
-## rjd3toolkit 3.7.1.9100
+## rjd3toolkit 3.8.0
 
 All notable changes to this project will be documented in this file.
 
