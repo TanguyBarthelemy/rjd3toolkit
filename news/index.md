@@ -14,7 +14,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 #### Changed
 
-- Updated JARS from jdplus-main to
+- Updated JARS from `jdplus-main` to
   [3.8.0](https://github.com/jdemetra/jdplus-main/releases/tag/v3.8.0)
 
 #### Fixed
@@ -67,9 +67,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   [\#85](https://github.com/rjdverse/rjd3toolkit/issues/85)
 - Documentation of `bias` argument in
   [`set_benchmarking()`](https://rjdverse.github.io/rjd3toolkit/reference/set_benchmarking.md)
-- New datasets : `Electricity` (French national electricity consumtion),
-  `Births` (Number of births registered in France from 1968 to 2024),
-  `x13_spec_default`(Default X13 specification) and
+- New datasets : `Electricity` (French national electricity
+  consumption), `Births` (Number of births registered in France from
+  1968 to 2024), `x13_spec_default`(Default X13 specification) and
   `tramoseats_spec_default` (Default Tramo-Seats specification)
 - New [`print()`](https://rdrr.io/r/base/print.html) and
   [`summary()`](https://rdrr.io/r/base/summary.html) method for

@@ -25,9 +25,9 @@ seasonality_combined(
 
 - firstperiod:
 
-  Position in a cycle of the first obs. For example, for a monthly,
-  `firstperiod = 1` means January. If `data` is not a `"ts"` object,
-  `firstperiod = 1` by default.
+  Position in a cycle of the first observation. For example, for a
+  monthly, `firstperiod = 1` means January. If `data` is not a `"ts"`
+  object, `firstperiod = 1` by default.
 
 - mul:
 
@@ -36,7 +36,7 @@ seasonality_combined(
 
 ## Value
 
-a `list` with several seasonnality tests (kruskalwallis, stable and
+a `list` with several seasonality tests (Kruskal-Wallis, stable and
 evolutive)
 
 ## Details
@@ -97,43 +97,43 @@ seasonality_combined(random_t(2, 1000), 7)
 #> [1] "NONE"
 #> 
 #> $kruskalwallis
-#> Value: 3.130647 
-#> P-Value: 0.7923 
+#> Value: 2.590806 
+#> P-Value: 0.8582 
 #> 
 #> $stable
 #> $stable$SSM
-#> [1] 29.69524
+#> [1] 86.98484
 #> 
 #> $stable$dfM
 #> [1] 6
 #> 
 #> $stable$SSR
-#> [1] 7929.619
+#> [1] 11815.42
 #> 
 #> $stable$dfR
 #> [1] 993
 #> 
 #> $stable$test
-#> Value: 0.6197729 
-#> P-Value: 0.7146 
+#> Value: 1.218407 
+#> P-Value: 0.2941 
 #> 
 #> 
 #> $evolutive
 #> $evolutive$SSM
-#> [1] 938.237
+#> [1] 1283.792
 #> 
 #> $evolutive$dfM
 #> [1] 141
 #> 
 #> $evolutive$SSR
-#> [1] 4999.424
+#> [1] 8351.378
 #> 
 #> $evolutive$dfR
 #> [1] 846
 #> 
 #> $evolutive$test
-#> Value: 1.126014 
-#> P-Value: 0.1671 
+#> Value: 0.9223333 
+#> P-Value: 0.7229 
 #> 
 #> 
 ```

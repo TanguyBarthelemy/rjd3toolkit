@@ -1,4 +1,4 @@
-# Default Tramo-Seats specification ("rsafull")
+# Default Tramo-Seats specification (`"rsafull"`)
 
 Tramo-Seats default specification generated with {rjd3tramoseats} used
 in examples for specification customization functions in {rjd3toolkit}
