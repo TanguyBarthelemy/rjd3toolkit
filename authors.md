@@ -7,7 +7,7 @@
 - **Alain Quartier-la-Tente**. Author.
   [](https://orcid.org/0000-0001-7890-3857)
 
-- **Tanguy Barthelemy**. Author, maintainer, artist.
+- **Tanguy Barthelemy**. Author, maintainer, artist, copyright holder.
 
 - **Anna Smyk**. Author.
 
