@@ -272,3 +272,7 @@ get_date_max()
 - id:
 
   Identifier of the time series information (source-dependent)
+
+## Value
+
+Informations retrieved from or for Java, proto

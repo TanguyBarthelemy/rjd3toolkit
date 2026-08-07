@@ -3,7 +3,7 @@
 Tramo-Seats default specification generated with {rjd3tramoseats} used
 in examples for specification customization functions in {rjd3toolkit}
 generated with
-`tramoseats_spec_default<- rjd3tramoseats::tramoseats_spec("rsafull")`
+`tramoseats_spec_default <- rjd3tramoseats::tramoseats_spec("rsafull")`
 
 ## Usage
 

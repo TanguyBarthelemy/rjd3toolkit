@@ -350,7 +350,7 @@ Creating Full JDemetra+ TS objects
 Evironment specific to JDemetra+
 
 - [`get_toolkit_option()`](https://rjdverse.github.io/rjd3toolkit/reference/get_toolkit_option.md)
-  : Set an option for toolkit
+  : Get teh value of an option for toolkit
 - [`toolkit_option()`](https://rjdverse.github.io/rjd3toolkit/reference/toolkit_option.md)
   : Set an option for toolkit
 - [`.r2jd_tsdata()`](https://rjdverse.github.io/rjd3toolkit/reference/jd3_utilities.md)

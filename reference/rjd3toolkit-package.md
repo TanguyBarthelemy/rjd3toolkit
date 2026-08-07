@@ -21,11 +21,12 @@ Useful links:
 ## Author
 
 **Maintainer**: Tanguy Barthelemy <timeserieswithjdemetraandr@gmail.com>
-\[artist\]
+\[artist, copyright holder\]
 
 Authors:
 
-- Tanguy Barthelemy <timeserieswithjdemetraandr@gmail.com> \[artist\]
+- Tanguy Barthelemy <timeserieswithjdemetraandr@gmail.com> \[artist,
+  copyright holder\]
 
 - Jean Palate <palatejean@gmail.com>
 
