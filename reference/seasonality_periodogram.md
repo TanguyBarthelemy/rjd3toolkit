@@ -42,6 +42,6 @@ seasonality_periodogram(s)
 #> Value: 598.6239 
 #> P-Value: 0.0000 
 seasonality_periodogram(random_t(2, 1000), 7)
-#> Value: 0.2614371 
-#> P-Value: 0.9547 
+#> Value: 0.9411663 
+#> P-Value: 0.4644 
 ```
