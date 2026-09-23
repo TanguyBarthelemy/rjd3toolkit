@@ -48,8 +48,8 @@ for details).
 
 ``` r
 ljungbox(random_t(2, 100), lag = 24, k = 1)
-#> Value: 0.01069145 
-#> P-Value: 0.9176 
+#> Value: 0.04479569 
+#> P-Value: 0.8324 
 ljungbox(ABS$X0.2.09.10.M, lag = 24, k = 1)
 #> Value: 350.021 
 #> P-Value: 0.0000 
