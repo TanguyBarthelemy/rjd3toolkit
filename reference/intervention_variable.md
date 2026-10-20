@@ -114,8 +114,6 @@ vars <- list(
 
 # creating the modelling context
 my_context <- modelling_context(variables = vars)
-#> [1] "other"
-#> [1] "other"
 
 # customize a default specification
 init_spec <- x13_spec_default
