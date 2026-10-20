@@ -243,12 +243,12 @@ variables <- list(
 )
 # Add regressors to context
 my_context <- modelling_context(variables = variables)
-#> Replaced 1 duplicated or missing name(s).
-#> Replaced 1 duplicated or missing name(s).
-#> Replaced 1 duplicated or missing name(s).
-#> Replaced 1 duplicated or missing name(s).
-#> Replaced 1 duplicated or missing name(s).
-#> Replaced 1 duplicated or missing name(s).
+#> [1] "ts"
+#> [1] "ts"
+#> [1] "ts"
+#> [1] "ts"
+#> [1] "ts"
+#> [1] "ts"
 
 # Create a new spec (here default group name: r)
 new_spec <- set_tradingdays(

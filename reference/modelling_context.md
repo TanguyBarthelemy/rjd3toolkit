@@ -60,5 +60,8 @@ vars <- list(reg1 = list(x = iv1), reg2 = list(x = iv2), reg3 = ABS)
 
 # Creating the modelling context
 my_context <- modelling_context(variables = vars)
+#> [1] "other"
+#> [1] "other"
+#> [1] "other"
 #> Replaced forbidden character(s) in 22 name(s).
 ```
