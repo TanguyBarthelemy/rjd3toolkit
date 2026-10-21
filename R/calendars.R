@@ -115,7 +115,7 @@ fixed_day <- function(month, day, weight = 1, validity = NULL) {
         weight = p$weight,
         validity = .p2r_validityPeriod(p$validity)
     )
-    class(output) <- FIXEDDAY
+    class(output) <- c(FIXEDDAY, HOLIDAY)
     return(output)
 }
 
@@ -350,7 +350,7 @@ single_day <- function(date, weight = 1) {
 #' @references
 #' More information on calendar correction in JDemetra+ online documentation:
 #' \url{https://doc.jdemetra.org/a-calendar-correction}
-special_day <- function(event, offset = 0, weight = 1, validity = NULL) {
+special_day <- function(event, offset = 0L, weight = 1, validity = NULL) {
     output <- list(
         event = event,
         offset = offset,
@@ -841,7 +841,11 @@ chained_calendar <- function(calendar1, calendar2, break_date) {
 }
 
 .p2r_chainedcalendar <- function(p) {
-    return(chained_calendar(p$calendar1, p$calendar2, .p2r_date(p$break_date)))
+    return(chained_calendar(
+        calendar1 = .p2r_calendardef(p$calendar1),
+        calendar2 = .p2r_calendardef(p$calendar2),
+        .p2r_date(p$break_date)
+    ))
 }
 
 .r2p_chainedcalendar <- function(r) {
@@ -900,22 +904,33 @@ weighted_calendar <- function(calendars, weights) {
 }
 
 .p2r_wcalendar <- function(p) {
-    calendars <- sapply(p$items, function(item) {
-        return(item$calendar)
-    })
-    weights <- sapply(p$items, function(item) {
-        return(item$weight)
-    })
+    items <- lapply(p$items, .p2r_wcalendar_item)
+    calendars <- lapply(items, base::`[[`, "calendar")
+    weights <- lapply(items, base::`[[`, "weight") |> do.call(what = c)
     return(weighted_calendar(calendars, weights))
+}
+
+.p2r_wcalendar_item <- function(p) {
+    calendar <- .p2r_calendardef(p$calendar)
+    weight <- p$weight
+    return(list(calendar = calendar, weight = weight))
 }
 
 .r2p_wcalendar <- function(r) {
     pwc <- jd3.WeightedCalendar$new()
     n <- length(r$calendars)
     pwc$items <- lapply(1:n, function(i) {
-        return(list(calendar = r$calendars[[i]], weight = r$weights[i]))
+        return(.r2p_wcalendar_item(calendar= r$calendars[[i]], weight = r$weights[i]))
     })
     pwc
+}
+
+.r2p_wcalendar_item <- function(calendar, weight) {
+    p <- jd3.WeightedCalendar$Item$new()
+    p$calendar <- .r2p_calendardef(calendar)
+    p$weight <- weight
+    return(p)
+
 }
 
 .p2r_calendardef <- function(p) {
@@ -1059,7 +1074,7 @@ calendar_td <- function(
     holiday = 7,
     contrasts = TRUE
 ) {
-    if (!methods::is(calendar, "JD3_CALENDAR")) {
+    if (!methods::is(calendar, "JD3_CALENDARDEFINITION")) {
         stop("Invalid calendar")
     }
     if (!missing(s) && stats::is.ts(s)) {
@@ -1088,7 +1103,9 @@ calendar_td <- function(
     }
 
     jdom <- .r2jd_tsdomain(frequency, start[1], start[2], length)
-    pcal <- .r2p_calendar(calendar)
+    # pcal <- .r2p_calendar(calendar)
+    pcal <- .r2p_calendardef(calendar)[[1L]]
+
     jcal <- .p2jd_calendar(pcal)
     jm <- rJava::.jcall(
         "jdplus/toolkit/base/r/modelling/Variables",

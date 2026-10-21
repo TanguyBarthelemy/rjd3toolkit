@@ -333,7 +333,7 @@ message Calendar{
 message WeightedCalendar{
 	/* Weighted calendars are only defined inside a modelling context */
 	message Item{
-		string calendar = 1;
+		CalendarDefinition calendar = 1;
 		double weight = 2;
 	}
 	repeated Item items = 1;
@@ -341,8 +341,8 @@ message WeightedCalendar{
 
 message ChainedCalendar{
 	/* Chained calendars are only defined inside a modelling context */
-	string calendar1 = 1;
-	string calendar2 = 2;
+	CalendarDefinition calendar1 = 1;
+	CalendarDefinition calendar2 = 2;
 	Date break_date = 3;
 }
 
